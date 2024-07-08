@@ -12,7 +12,7 @@ function Footer() {
                   Designed and Developed By
               </h1>
              <h className="text-white">
-                <span className="text-white">Sathyaprakash Reddy.K</span>
+                <span className="text-white">Lokesh Chaudhari</span>
              </h>
         </div>
     </div>

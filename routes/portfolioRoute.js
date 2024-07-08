@@ -11,6 +11,7 @@ const User = require("../models/userModel");
 // get all portfolio data
 router.get("/get-portfolio-data", async (req, res) => {
   try {
+    // console.log("hello");
     const intros = await Intro.find();
     const abouts = await About.find();
     const projects = await Project.find();
@@ -25,7 +26,10 @@ router.get("/get-portfolio-data", async (req, res) => {
       contact: contacts[0],
       experiences: experiences,
       courses: courses,
-    });
+    }
+    
+  );
+  console.log("hello");
   } catch (error) {
     res.status(500).send(error);
   }

@@ -14,7 +14,7 @@ function Home() {
   const { portfolioData } = useSelector((state) => state.root);
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
 
       {portfolioData && (
         <div className="bg-primary px-40 sm:px-5">
