@@ -19,6 +19,8 @@ function Award() {
             title: 'Date',
             dataIndex: 'date',
             key: 'date',
+            align: 'center',
+            responsive: ['md'],
             render: (text) => moment(text).format('DD/MM/YYYY')
 
         },
@@ -26,16 +28,21 @@ function Award() {
             title: 'Title',
             dataIndex: 'title',
             key: 'title',
+            fixed: 'left',
+            align: 'center',
+            width: 10
         },
         {
             title: 'Organisation',
             dataIndex: 'organisation',
             key: 'organisation',
+            align: 'center',
         },
         {
             title: 'Photo',
             dataIndex: 'photo',
             key: 'photo',
+            align: 'center',
             render: (text, record) => (
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded" onClick={() => handleDownloadImage(record.photo)} style={{ width: 50 }}>
                     View
@@ -46,6 +53,7 @@ function Award() {
             title: 'Remark',
             dataIndex: 'remark',
             key: 'remark',
+            align: 'center',
             resposive: 'md'
         },
 
@@ -61,16 +69,21 @@ function Award() {
     };
 
     return (
-        <div className="">
+        <div className="m-10">
            <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Awards & Recognitions</h1>
             <Table
                 dataSource={awards}
                 columns={columns}
                 rowKey="_id"
-                pagination={{ pageSize: 12 }}
-                className="border border-gray-200"
+                pagination={false}
+                className=""
                 bordered
                 size="small"
+                scroll={{
+                    x: 'max-content', // Enable horizontal scroll
+                    // Enable vertical scroll with a height limit
+                }}
+
 
 
             />

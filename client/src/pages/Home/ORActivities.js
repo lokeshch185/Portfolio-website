@@ -62,7 +62,7 @@ function ORActivities() {
 
     return (
             <div className="">
-            <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Conference Papers</h1>
+            <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Outreach Activities</h1>
             <Table
                 
                 dataSource={oractivities}

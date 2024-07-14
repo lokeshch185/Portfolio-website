@@ -21,37 +21,46 @@ function Conference() {
             title: 'Date',
             dataIndex: 'date',
             key: 'date',
+            responsive: ['md'],
+            align: 'center',
             render: (text) => moment(text).format('DD/MM/YYYY')
         },
         {
             title: 'Title',
             dataIndex: 'title',
             key: 'title',
+            fixed: 'left',
+            align: 'center',
         },
         {
             title: 'Conference',
             dataIndex: 'conference',
             key: 'conference',
+            align: 'center',
         },
         {
             title: 'Author List',
             dataIndex: 'authors',
             key: 'authors',
+            align: 'center',
         },
         {
             title: 'Hosting Venue',
             dataIndex: 'venue',
             key: 'venue',
+            align: 'center',
         },
         {
             title: 'DOI',
             dataIndex: 'DOI',
             key: 'DOI',
+            align: 'center',
         },
         {
             title: 'Remark',
             dataIndex: 'remark',
             key: 'remark',
+            align: 'center',
         },
         
         
@@ -59,7 +68,7 @@ function Conference() {
     ];
 
     return (
-            <div className="">
+         <div className="m-10">
             <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Conference Papers</h1>
             <Table
                 
