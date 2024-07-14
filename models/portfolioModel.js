@@ -84,6 +84,87 @@ const projectsSchema = new mongoose.Schema({
   },
 });
 
+const talksSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  type_of_audience: {
+    type: String,
+    required: true,
+  },
+  number: {
+    type: String,
+    required: true,
+  },
+  org_name: {
+    type: String,
+    required: true,
+  },
+  remark: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
+});
+
+const journalsSchema = new mongoose.Schema({
+  Title: {
+    type: String,
+    required: true,
+  },
+  Title_of_journal_ppr: {
+    type: String,
+    required: true,
+  },
+  Author_list: {
+    type: String,
+    required: true,
+  },
+  ISSN_DOI: {
+    type: String,
+    required: true,
+  },
+  Remark: {
+    type: String,
+    required: true,
+  },
+});
+
+const fprojectsSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  studentgrp: {
+    type: String,
+    required: true,
+  },
+  absvideolink: {
+    type: String,
+    required: true,
+  },
+  photo: {
+    type: String,
+    required: true,
+  },
+  fundingagencyname: {
+    type: String,
+    required: true,
+  },
+  amtfunded: {
+    type: String,
+    required: true,
+  },
+  remark: {
+    type: String,
+    required: true,
+  },
+});
+
 const coursesSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -130,6 +211,110 @@ const contactSchema = new mongoose.Schema({
   },
 });
 
+const conferencesSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  conference: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
+  authors: {
+    type: String,
+    required: true,
+  },
+  venue: {
+    type: String,
+    required: true,
+  },
+  DOI: {
+    type: String,
+    required: true,
+  },
+  remark: {
+    type: String,
+    required: true,
+  },
+});
+
+const oractivitySchema = new mongoose.Schema({
+  date: {
+    type: Date,
+    required: true,
+  },
+  organisation: {
+    type: String,
+    required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  responsibilities: {
+    type: String,
+    required: true,
+  },
+  remarks: {
+    type: String,
+    required: true,
+  },
+});
+
+const ugprojectsSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  group: {
+    type: String,
+    required: true,
+  },
+  abstract: {
+    type: String,
+    required: true,
+  },
+  link: {
+    type: String,
+    required: true,
+  },
+  photo: {
+    type: String,
+    required: true,
+  },
+});
+
+const awardsSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  organisation: {
+    type: String,
+    required: true,
+  },
+  photo: {
+    type: String,
+    required: true,
+  },
+  remark: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
+});
+
 module.exports = {
   Intro: mongoose.model("intros", introSchema),
   About: mongoose.model("abouts", aboutSchema),
@@ -137,4 +322,11 @@ module.exports = {
   Project: mongoose.model("projects", projectsSchema),
   Course: mongoose.model("courses", coursesSchema),
   Contact: mongoose.model("contacts", contactSchema),
+  Talks : mongoose.model("talks", talksSchema),
+  Journal : mongoose.model("journals", journalsSchema),
+  Fprojects : mongoose.model("fprojects", fprojectsSchema),
+  Conference : mongoose.model("conferences", conferencesSchema),
+  UGProject : mongoose.model("UGproject", ugprojectsSchema),
+  ORActivity : mongoose.model("ORActivity", oractivitySchema),
+  Awards : mongoose.model("Awards", awardsSchema),
 };

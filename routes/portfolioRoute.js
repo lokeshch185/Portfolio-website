@@ -6,6 +6,13 @@ const {
   Contact,
   Experience,
   Course,
+  Talks,
+  Journal,
+  Fprojects,
+  Conference,
+  UGProject,
+  ORActivity,
+  Awards,
 } = require("../models/portfolioModel");
 const User = require("../models/userModel");
 // get all portfolio data
@@ -18,6 +25,16 @@ router.get("/get-portfolio-data", async (req, res) => {
     const contacts = await Contact.find();
     const experiences = await Experience.find();
     const courses = await Course.find();
+    const talks = await Talks.find();
+    const journals = await Journal.find();
+    const fprojects = await Fprojects.find();
+    const conferences = await Conference.find();
+    const ugprojects = await UGProject.find();
+    const oractivities = await ORActivity.find();
+    const awards = await Awards.find();
+
+ 
+
 
     res.status(200).send({
       intro: intros[0],
@@ -26,6 +43,13 @@ router.get("/get-portfolio-data", async (req, res) => {
       contact: contacts[0],
       experiences: experiences,
       courses: courses,
+      talks: talks,
+      journals:journals,
+      fprojects : fprojects,
+      conferences: conferences,
+      oractivities: oractivities,
+      ugprojects: ugprojects,
+      awards : awards,
     }
     
   );
@@ -119,6 +143,152 @@ router.post("/delete-experience", async (req, res) => {
   }
 });
 
+// add oractivity
+router.post("/add-oractivity", async (req, res) => {
+  try {
+    const oractivity = new ORActivity(req.body);
+    await oractivity.save();
+    res.status(200).send({
+      data: oractivity,
+      success: true,
+      message: "OutReach Activity added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update oractivity
+router.post("/update-oractivity", async (req, res) => {
+  try {
+    const oractivity = await ORActivity.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: oractivity,
+      success: true,
+      message: "OutReach Activity updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete oractivity
+
+router.post("/delete-oractivity", async (req, res) => {
+  try {
+    const oractivity = await ORActivity.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: oractivity,
+      success: true,
+      message: "OutReach Activity deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// add ugproject
+router.post("/add-ugproject", async (req, res) => {
+  try {
+    const ugproject = new UGProject(req.body);
+    await ugproject.save();
+    res.status(200).send({
+      data: ugproject,
+      success: true,
+      message: "UGProject added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update UGProject
+router.post("/update-ugproject", async (req, res) => {
+  try {
+    const ugproject = await UGProject.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: ugproject,
+      success: true,
+      message: "UGProject updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete UGProject
+router.post("/delete-ugproject", async (req, res) => {
+  try {
+    console.log(req.body._id);
+    const ugproject = await UGProject.findOneAndDelete({ _id: req.body._id });
+    console.log(ugproject);
+    res.status(200).send({
+      data: ugproject,
+      success: true,
+      message: "UGProject deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// add award
+router.post("/add-award", async (req, res) => {
+  try {
+    const award = new Awards(req.body);
+    // console.log(award);
+    await award.save();
+    res.status(200).send({
+      data: award,
+      success: true,
+      message: "Award added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update award
+router.post("/update-award", async (req, res) => {
+  try {
+    const award = await Awards.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: award,
+      success: true,
+      message: "Award updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete award
+
+router.post("/delete-award", async (req, res) => {
+  try {
+    const award = await Awards.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: award,
+      success: true,
+      message: "Award deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 // add project
 router.post("/add-project", async (req, res) => {
   try {
@@ -167,6 +337,101 @@ router.post("/delete-project", async (req, res) => {
   }
 });
 
+// add journal paper
+
+router.post("/add-journal", async (req, res) => {
+  try {
+    const journal = new Journal(req.body);
+    await journal.save();
+    res.status(200).send({
+      data: journal,
+      success: true,
+      message: "Journal paper added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update journal paper
+router.post("/update-journal", async (req, res) => {
+  try {
+    const journal = await Journal.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: journal,
+      success: true,
+      message: "Journal paper updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete journal paper
+router.post("/delete-journal", async (req, res) => {
+  try {
+    const journal = await Journal.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: journal,
+      success: true,
+      message: "Journal paper deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//add fprojects
+router.post("/add-fprojects", async (req, res) => {
+  try {
+    const fprojects = new fprojects(req.body);
+    await fprojects.save();
+    res.status(200).send({
+      data: fprojects,
+      success: true,
+      message: "fprojects added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update fprojects
+router.post("/update-fprojects", async (req, res) => {
+  try {
+    const fprojects = await fprojects.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: fprojects,
+      success: true,
+      message: "fprojects updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete fprojects
+router.post("/delete-fprojects", async (req, res) => {
+  try {
+    const fprojects = await fprojects.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: fprojects,
+      success: true,
+      message: "fprojects deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 // add course
 router.post("/add-course", async (req, res) => {
   try {
@@ -209,6 +474,101 @@ router.post("/delete-course", async (req, res) => {
       data: course,
       success: true,
       message: "Course deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// add talk
+
+router.post("/add-talk", async (req, res) => {
+  try {
+    const talks = new Talks(req.body);
+    await talks.save();
+    res.status(200).send({
+      data: talks,
+      success: true,
+      message: "Talk added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update talk
+router.post("/update-talk", async (req, res) => {
+  try {
+    const talks = await Talks.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: talks,
+      success: true,
+      message: "Talk updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete talk
+router.post("/delete-talk", async (req, res) => {
+  try {
+    const talks = await Talks.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: talks,
+      success: true,
+      message: "Talk deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//add conference
+router.post("/add-conference", async (req, res) => {
+  try {
+    const conference = new Conference(req.body);
+    await conference.save();
+    res.status(200).send({
+      data: conference,
+      success: true,
+      message: "conference added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update conference
+router.post("/update-conference", async (req, res) => {
+  try {
+    const conference = await Conference.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: conference,
+      success: true,
+      message: "Conference updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete conference
+router.post("/delete-conference", async (req, res) => {
+  try {
+    const conference = await Conference.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: conference,
+      success: true,
+      message: "Conference deleted successfully",
     });
   } catch (error) {
     res.status(500).send(error);

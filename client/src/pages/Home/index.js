@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Header from "../../components/Header";
+
 import About from "./About";
 import Contact from "./Contact";
 import Courses from "./Courses";
@@ -17,7 +17,7 @@ function Home() {
       {/* <Header /> */}
 
       {portfolioData && (
-        <div className="bg-primary px-40 sm:px-5">
+        <div className="bg-primary px-40 sm:px-10 ">
           <Intro />
           <About />
           <Experiences />

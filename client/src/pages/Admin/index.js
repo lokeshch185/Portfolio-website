@@ -1,14 +1,22 @@
 import React, { useEffect } from "react";
-import Header from "../../components/Header";
 import { Tabs } from "antd";
+import { useSelector } from "react-redux";
 import AdminIntro from "./AdminIntro";
 import AdminAbout from "./AdminAbout";
-import { useSelector } from "react-redux";
 import Experiences from "./AdminExperiences";
 import AdminProjects from "./AdminProjects";
 import AdminCourses from "./AdminCourses";
 import AdminContact from "./AdminContact";
+import AdminAwards from "./AdminAwards";
+import AdminUGProjects from "./AdminUGProjects";
+import AdminTalks from "./AdminTalks"; 
+import AdminORActivites from "./AdminORActivities";
+import AdminJournalppr from "./AdminJournalppr";
+import AdminfProjects from "./AdminfProjects";
+import AdminConference from "./AdminConference";
+
 const { TabPane } = Tabs;
+
 function Admin() {
   const { portfolioData } = useSelector((state) => state.root);
 
@@ -20,12 +28,8 @@ function Admin() {
 
   return (
     <div>
-      <Header />
       <div className="flex gap-10 items-center px-5 py-2 justify-between">
-        <div className="flex gap-10 items-center">
-          <h1 className="text-3xl text-primary">Portfolio Admin</h1>
-          <div className="w-60 h-[1px] bg-gray-500"></div>
-        </div>
+        <h1 className="text-3xl text-primary">Portfolio Admin</h1>
         <h1
           className="underline text-primary text-xl cursor-pointer"
           onClick={() => {
@@ -56,6 +60,27 @@ function Admin() {
             </TabPane>
             <TabPane tab="Contact" key="6">
               <AdminContact />
+            </TabPane>
+            <TabPane tab="Awards" key="7">
+              <AdminAwards />
+            </TabPane>
+            <TabPane tab="UG Projects" key="8">
+              <AdminUGProjects />
+            </TabPane>
+            <TabPane tab="Talks" key="9">
+              <AdminTalks />
+            </TabPane>
+            <TabPane tab="OR Activities" key="10">
+              <AdminORActivites />
+            </TabPane>
+            <TabPane tab="Journal Papers" key="11">
+              <AdminJournalppr />
+            </TabPane>
+            <TabPane tab="F Projects" key="12">
+              <AdminfProjects />
+            </TabPane>
+            <TabPane tab="Conferences" key="13">
+              <AdminConference />
             </TabPane>
           </Tabs>
         </div>
