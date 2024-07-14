@@ -25,7 +25,7 @@ function About() {
         </div>
       </div>
 
-      <div className="py-5">
+      {/* <div className="py-5">
         <h1 className="text-tertiary text-xl">
           Here are a few technologies I’ve been working with recently:
         </h1>
@@ -36,7 +36,7 @@ function About() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

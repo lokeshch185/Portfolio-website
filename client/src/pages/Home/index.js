@@ -9,6 +9,9 @@ import Footer from "./Footer";
 import Intro from "./Intro";
 import LeftSider from "./LeftSider";
 import Projects from "./Projects";
+import Award from "./Award";
+import CurrentPosition from "./CurrentPosition";
+import PastPosition from "./PastPosition";
 
 function Home() {
   const { portfolioData } = useSelector((state) => state.root);
@@ -20,9 +23,12 @@ function Home() {
         <div className="bg-primary px-40 sm:px-10 ">
           <Intro />
           <About />
+          <CurrentPosition/>
+          <PastPosition/>
           <Experiences />
-          <Projects />
-          <Courses />
+          {/* <Projects />
+          <Courses /> */}
+          <Award/>
           <Contact />
           <Footer />
           <LeftSider />
