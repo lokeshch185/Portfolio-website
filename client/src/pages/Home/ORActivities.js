@@ -22,6 +22,8 @@ function ORActivities() {
             dataIndex: 'date',
             key: 'date',
             align: 'center',
+            responsive: ['md'],
+            fixed: 'left',
             render: (text) => moment(text).format('DD/MM/YYYY')
         },
         {
@@ -29,6 +31,7 @@ function ORActivities() {
             dataIndex: 'organisation',
             key: 'organisation',
             align: 'center',
+            fixed: 'left',
         },
         {
             title: 'OutReach Activity Type',
@@ -41,6 +44,7 @@ function ORActivities() {
             dataIndex: 'title',
             key: 'title',
             align: 'center',
+            width: 10
         },
         {
             title: 'Responsibilities Handled',
@@ -54,6 +58,7 @@ function ORActivities() {
             dataIndex: 'remarks',
             key: 'remarks',
             align: 'center',
+            responsive: ['md'],
         },
         
         
@@ -61,13 +66,13 @@ function ORActivities() {
     ];
 
     return (
-            <div className="">
-            <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Conference Papers</h1>
+            <div className="m-10">
+            <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Out Reach Activities</h1>
             <Table
                 
                 dataSource={oractivities}
                 columns={columns}
-                size="small"
+                size="md"
                 rowKey="_id"
                 pagination={false}
                 className=""
