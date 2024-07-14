@@ -23,6 +23,7 @@ function ORActivities() {
             key: 'date',
             align: 'center',
             responsive: ['md'],
+            fixed: 'left',
             render: (text) => moment(text).format('DD/MM/YYYY')
         },
         {
@@ -30,6 +31,7 @@ function ORActivities() {
             dataIndex: 'organisation',
             key: 'organisation',
             align: 'center',
+            fixed: 'left',
         },
         {
             title: 'OutReach Activity Type',
