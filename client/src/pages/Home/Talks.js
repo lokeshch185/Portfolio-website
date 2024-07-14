@@ -70,7 +70,7 @@ function Talks() {
 
     return (
         <div>
-            <Navbar />
+          
         <div className="m-10">
             <h1 className="flex justify-center items-center text-4xl text-primary ">Talks</h1>
         <Table

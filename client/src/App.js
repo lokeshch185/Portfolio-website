@@ -55,10 +55,9 @@ function App() {
   }, [reloadData]);
 
   return (
-
     <BrowserRouter>
       {loading && <Loader />}
-   
+      <Navbar /> {/* Add Navbar here */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />

@@ -1,30 +1,19 @@
-import React from "react";
-import { Menu, Avatar } from "antd";
-import { UserOutlined, CodeOutlined, LogoutOutlined } from "@ant-design/icons";
+import React, { Component } from 'react';
+import { Menu } from 'antd';
 
-const RightMenu = ({ mode }) => {
-  return (
-    <Menu mode={mode}>
-      <Menu.SubMenu
-        title={
-          <>
-            <Avatar icon={<UserOutlined />} />
-            <span className="username">John Doe</span>
-          </>
-        }
-      >
-        <Menu.Item key="project">
-          <CodeOutlined /> Projects
+class RightMenu extends Component {
+  render() {
+    return (
+			<Menu mode="horizontal">
+        <Menu.Item key="mail">
+          <a href="">Signin</a>
         </Menu.Item>
-        <Menu.Item key="about-us">
-          <UserOutlined /> Profile
+        <Menu.Item key="app">
+          <a href="">Signup</a>
         </Menu.Item>
-        <Menu.Item key="log-out">
-          <LogoutOutlined /> Logout
-        </Menu.Item>
-      </Menu.SubMenu>
-    </Menu>
-  );
-};
+      </Menu>
+    );
+  }
+}
 
 export default RightMenu;

@@ -1,60 +1,80 @@
-import React, { useState } from "react";
-import { Layout, Button, Drawer } from "antd";
-import LeftMenu from "./LeftMenu";
-import RightMenu from "./RightMenu";
-import { MenuOutlined } from "@ant-design/icons";
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import React from 'react';
+import { Row, Col, Typography, Layout, Menu } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
+import './Navbar.css'
 
-const Navbar = () => {
-  const [visible, setVisible] = useState(false);
-  const showDrawer = () => {
-    setVisible(!visible);
+const { Header, Content } = Layout;
+const { Title } = Typography;
+
+const NavBar = (props) => {
+  const navigate = useNavigate();
+
+  const gotoPage = (page) => {
+    navigate(page);
   };
 
-  // If you do not want to auto-close the mobile drawer when a path is selected
-  // Delete or comment out the code block below
-  // From here
-  let { pathname: location } = useLocation();
-  useEffect(() => {
-    setVisible(false);
-  }, [location]);
-  // Upto here
-
   return (
-    <nav className="navbar">
-      <Layout>
-        <Layout.Header className="nav-header">
-          <div className="logo">
-            <h3 className="brand-font">lokesh</h3>
-          </div>
-          <div className="navbar-menu">
-            <div className="leftMenu">
-              <LeftMenu mode={"horizontal"} />
-            </div>
-            <Button className="menuButton" type="text" onClick={showDrawer}>
-              <MenuOutlined />
-            </Button>
-            <div className="rightMenu">
-              <RightMenu mode={"horizontal"} />
-            </div>
-
-            <Drawer
-              title={"lokesh"}
-              placement="right"
-              closable={true}
-              onClose={showDrawer}
-              visible={visible}
-              style={{ zIndex: 99999 }}
-            >
-              <LeftMenu mode={"inline"} />
-              <RightMenu mode={"inline"} />
-            </Drawer>
-          </div>
-        </Layout.Header>
-      </Layout>
-    </nav>
+    <Row justify='center'>
+      <Col xl={24} lg={24} md={24} sm={24} xs={24}>
+        <Header className='header-fixed'>
+          <Row>
+            <Col xl={12} lg={12} md={12} sm={20} xs={20}>
+              <Title id='title-button' level={4}>
+                <a onClick={() => gotoPage('/')}>Lokesh Chaudhari</a>
+              </Title>
+            </Col>
+            <Col xl={12} lg={12} md={12} sm={4} xs={4}>
+              <Menu
+                theme='dark'
+                mode='horizontal'
+                defaultSelectedKeys={["home"]}
+                overflowedIndicator={<MenuOutlined />}
+              >
+                <Menu.Item key="home" onClick={() => gotoPage("/")}>
+                  Home
+                </Menu.Item>
+                <Menu.Item key="ugproject" onClick={() => gotoPage("/ugproject")}>
+                  UG Project
+                </Menu.Item>
+                <Menu.Item key="courses" onClick={() => gotoPage("/courses")}>
+                  Courses
+                </Menu.Item>
+                <Menu.Item key="conference" onClick={() => gotoPage("/conference")}>
+                  Conference
+                </Menu.Item>
+                <Menu.Item key="talks" onClick={() => gotoPage("/talks")}>
+                  Talks
+                </Menu.Item>
+                <Menu.Item key="projects" onClick={() => gotoPage("/projects")}>
+                  Projects
+                </Menu.Item>
+                <Menu.Item key="journals" onClick={() => gotoPage("/journals")}>
+                  Journals
+                </Menu.Item>
+                <Menu.Item key="oractivities" onClick={() => gotoPage("/oractivities")}>
+                  OR Activities
+                </Menu.Item>
+                <Menu.Item key="award" onClick={() => gotoPage("/award")}>
+                  Award
+                </Menu.Item>
+                <Menu.Item key="about" onClick={() => gotoPage("/about")}>
+                  About
+                </Menu.Item>
+                <Menu.Item key="experiences" onClick={() => gotoPage("/experiences")}>
+                  Experiences
+                </Menu.Item>
+                <Menu.Item key="contact" onClick={() => gotoPage("/contact")}>
+                  Contact
+                </Menu.Item>
+              </Menu>
+            </Col>
+          </Row>
+        </Header>
+        <Content>{props.children}</Content>
+      </Col>
+    </Row>
   );
 };
 
-export default Navbar;
+export default NavBar;
