@@ -23,6 +23,7 @@ function Conference() {
             key: 'date',
             responsive: ['md'],
             align: 'center',
+            fixed: 'left',
             render: (text) => moment(text).format('DD/MM/YYYY')
         },
         {
@@ -31,12 +32,14 @@ function Conference() {
             key: 'title',
             fixed: 'left',
             align: 'center',
+            width:10
         },
         {
             title: 'Conference',
             dataIndex: 'conference',
             key: 'conference',
             align: 'center',
+            
         },
         {
             title: 'Author List',
@@ -49,12 +52,15 @@ function Conference() {
             dataIndex: 'venue',
             key: 'venue',
             align: 'center',
+            width:7
         },
         {
             title: 'DOI',
             dataIndex: 'DOI',
             key: 'DOI',
             align: 'center',
+            width:8
+            
         },
         {
             title: 'Remark',
@@ -75,9 +81,14 @@ function Conference() {
                 dataSource={conferences}
                 columns={columns}
                 rowKey="_id"
-                pagination={{ pageSize: 12 }}
-                className="border border-gray-200 m-10"
+                size="small"
+                pagination={false}
+                className=""
                 bordered
+                scroll={{
+                    x: 'max-content', // Enable horizontal scroll
+                    // Enable vertical scroll with a height limit
+                }}
 
             />
             <style jsx>{`
@@ -85,6 +96,7 @@ function Conference() {
                     background-color: #0A192F !important; /* Use primary color */
                     color: white !important;
                 }
+
             `}</style>
         </div>
         

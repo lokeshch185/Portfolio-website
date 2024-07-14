@@ -21,6 +21,8 @@ function Award() {
             key: 'date',
             align: 'center',
             responsive: ['md'],
+            fixed: 'left',
+            width:5,
             render: (text) => moment(text).format('DD/MM/YYYY')
 
         },
@@ -30,19 +32,21 @@ function Award() {
             key: 'title',
             fixed: 'left',
             align: 'center',
-            width: 10
+            width: 15
         },
         {
             title: 'Organisation',
             dataIndex: 'organisation',
             key: 'organisation',
             align: 'center',
+            width:30
         },
         {
             title: 'Photo',
             dataIndex: 'photo',
             key: 'photo',
             align: 'center',
+            width:20,
             render: (text, record) => (
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded" onClick={() => handleDownloadImage(record.photo)} style={{ width: 50 }}>
                     View
@@ -54,7 +58,8 @@ function Award() {
             dataIndex: 'remark',
             key: 'remark',
             align: 'center',
-            resposive: 'md'
+            resposive: 'md',
+            width:40
         },
 
     ];

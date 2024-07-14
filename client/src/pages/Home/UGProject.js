@@ -31,6 +31,7 @@ function UGProject() {
             dataIndex: 'title',
             key: 'title',
             align: 'center',
+            fixed: 'left',
         },
         {
             title: 'Student Group',
@@ -43,7 +44,6 @@ function UGProject() {
             dataIndex: 'abstract',
             key: 'abstract',
             align: 'center',
-            responsive: ['md'],
         },
         {
             title: 'Video Link',
@@ -83,7 +83,7 @@ function UGProject() {
                 
                 dataSource={ugprojects}
                 columns={columns}
-                size="small"
+                size="md"
                 rowKey="_id"
                 pagination={false}
                 className=""
