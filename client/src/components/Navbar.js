@@ -34,39 +34,39 @@ const NavBar = (props) => {
                 <Menu.Item key="home" onClick={() => gotoPage("/")}>
                   Home
                 </Menu.Item>
-                <Menu.Item key="ugproject" onClick={() => gotoPage("/ugproject")}>
-                  UG Project
+                <Menu.Item key="award" onClick={() => gotoPage("/award")}>
+                  Awards
                 </Menu.Item>
-                <Menu.Item key="courses" onClick={() => gotoPage("/courses")}>
-                  Courses
+                <Menu.Item key="ugproject" onClick={() => gotoPage("/ugproject")}>
+                  Undergraduate Projects
                 </Menu.Item>
                 <Menu.Item key="conference" onClick={() => gotoPage("/conference")}>
-                  Conference
+                  Conferences
                 </Menu.Item>
                 <Menu.Item key="talks" onClick={() => gotoPage("/talks")}>
                   Talks
                 </Menu.Item>
-                <Menu.Item key="projects" onClick={() => gotoPage("/projects")}>
-                  Projects
+                <Menu.Item key="oractivities" onClick={() => gotoPage("/oractivities")}>
+                  OutReach Activities
                 </Menu.Item>
                 <Menu.Item key="journals" onClick={() => gotoPage("/journals")}>
                   Journals
                 </Menu.Item>
-                <Menu.Item key="oractivities" onClick={() => gotoPage("/oractivities")}>
-                  OR Activities
-                </Menu.Item>
-                <Menu.Item key="award" onClick={() => gotoPage("/award")}>
-                  Award
-                </Menu.Item>
-                <Menu.Item key="about" onClick={() => gotoPage("/about")}>
+                {/* <Menu.Item key="about" onClick={() => gotoPage("/about")}>
                   About
                 </Menu.Item>
                 <Menu.Item key="experiences" onClick={() => gotoPage("/experiences")}>
                   Experiences
+                </Menu.Item> */}
+                <Menu.Item key="courses" onClick={() => gotoPage("/courses")}>
+                  Courses
+                </Menu.Item>
+                {/* <Menu.Item key="projects" onClick={() => gotoPage("/projects")}>
+                  Projects
                 </Menu.Item>
                 <Menu.Item key="contact" onClick={() => gotoPage("/contact")}>
                   Contact
-                </Menu.Item>
+                </Menu.Item> */}
               </Menu>
             </Col>
           </Row>
