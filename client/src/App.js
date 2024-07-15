@@ -13,7 +13,6 @@ import {
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Login from "./pages/Admin/Login";
-import Award from "./pages/Home/Award";
 import About from "./pages/Home/About";
 import Experiences from "./pages/Home/Experiences";
 import Projects from "./pages/Home/Projects";
@@ -78,7 +77,6 @@ const RoutesWithNavbarAndFooter = ({ loading }) => {
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin-login" element={<Login />} />
-        <Route path="/award" element={<Award />} />
         <Route path="/about" element={<About />} />
         <Route path="/experiences" element={<Experiences />} />
         <Route path="/projects" element={<Projects />} />

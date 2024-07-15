@@ -9,7 +9,7 @@ import Footer from "./Footer";
 import Intro from "./Intro";
 import LeftSider from "./LeftSider";
 import Projects from "./Projects";
-import Award from "./Award";
+import Awards from "./Awards";
 import CurrentPosition from "./CurrentPosition";
 import PastPosition from "./PastPosition";
 
@@ -28,7 +28,7 @@ function Home() {
           <Experiences />
           {/* <Projects />
           <Courses /> */}
-          <Award/>
+          <Awards/>
           <Contact />
           <Footer />
           <LeftSider />
