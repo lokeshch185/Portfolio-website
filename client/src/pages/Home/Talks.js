@@ -3,8 +3,7 @@ import { useSelector } from "react-redux";
 import { Space, Table, Typography } from 'antd';
 import moment from "moment";
 import "../../index.css"
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+
 
 const {Title, Text} = Typography;
 
@@ -94,7 +93,7 @@ function Talks() {
                 }
             `}</style>
     </div>
-    <Footer/>
+
     </div>
     );
 }

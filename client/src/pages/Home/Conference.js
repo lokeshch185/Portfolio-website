@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Table, Typography} from 'antd';
 import moment from "moment";
+import Journals from "./Journals";
 
 const { Title, Text } = Typography;
 
@@ -98,6 +99,7 @@ function Conference() {
                 }
 
             `}</style>
+            <Journals/>
         </div>
         
     );

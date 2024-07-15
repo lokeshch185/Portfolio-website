@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Table, Typography} from 'antd';
 import moment from "moment";
+import Talks from "./Talks"
 
 const { Title, Text } = Typography;
 
@@ -85,6 +86,7 @@ function ORActivities() {
                     color: white !important;
                 }
             `}</style>
+            <Talks/>
         </div>
         
     );
