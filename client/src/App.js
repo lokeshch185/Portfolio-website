@@ -20,6 +20,7 @@ import Projects from "./pages/Home/Projects";
 import Courses from "./pages/Home/Courses";
 import Contact from "./pages/Home/Contact";
 import UGProject from "./pages/Home/UGProject";
+import PGProject from "./pages/Home/PGProject";
 import Conference from "./pages/Home/Conference";
 import Talks from "./pages/Home/Talks";
 import ORActivities from "./pages/Home/ORActivities";
@@ -84,6 +85,7 @@ const RoutesWithNavbarAndFooter = ({ loading }) => {
         <Route path="/courses" element={<Courses />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/ugproject" element={<UGProject />} />
+        <Route path="/pgproject" element={<PGProject />} />
         <Route path="/conference" element={<Conference />} />
         <Route path="/talks" element={<Talks />} />
         <Route path="/oractivities" element={<ORActivities />} />

@@ -142,6 +142,9 @@ function AdminUGProjects() {
             <Form.Item name="photo" label="Photo">
               <input placeholder="Photo" />
             </Form.Item>
+            <Form.Item name="reportlink" label="Report Link">
+              <input placeholder="Report Link" />
+            </Form.Item>
 
             <div className="flex justify-end">
               <button

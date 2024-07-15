@@ -9,10 +9,10 @@ import AdminCourses from "./AdminCourses";
 import AdminContact from "./AdminContact";
 import AdminAwards from "./AdminAwards";
 import AdminUGProjects from "./AdminUGProjects";
+import AdminPGProjects from "./AdminPGProjects";
 import AdminTalks from "./AdminTalks"; 
 import AdminORActivites from "./AdminORActivities";
 import AdminJournalppr from "./AdminJournalppr";
-import AdminfProjects from "./AdminfProjects";
 import AdminConference from "./AdminConference";
 import AdminCurrentPositions from "./AdminCurrentPositions";
 import AdminPastPositions from "./AdminPastPositions";
@@ -69,17 +69,17 @@ function Admin() {
             <TabPane tab="UG Projects" key="8">
               <AdminUGProjects />
             </TabPane>
-            <TabPane tab="Talks" key="9">
+            <TabPane tab="PG Projects" key="9">
+              <AdminPGProjects />
+            </TabPane>
+            <TabPane tab="Talks" key="10">
               <AdminTalks />
             </TabPane>
-            <TabPane tab="OR Activities" key="10">
+            <TabPane tab="OR Activities" key="11">
               <AdminORActivites />
             </TabPane>
-            <TabPane tab="Journal Papers" key="11">
+            <TabPane tab="Journal Papers" key="12">
               <AdminJournalppr />
-            </TabPane>
-            <TabPane tab="F Projects" key="12">
-              <AdminfProjects />
             </TabPane>
             <TabPane tab="Conferences" key="13">
               <AdminConference />

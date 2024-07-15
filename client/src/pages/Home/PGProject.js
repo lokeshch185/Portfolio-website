@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Table, Typography} from 'antd';
 import moment from "moment";
-import PGProject from "./PGProject";
 
 const { Title, Text } = Typography;
 const handleDownloadImage = (url) => {
@@ -14,12 +13,12 @@ const handleDownloadImage = (url) => {
     document.body.removeChild(link);
 };
 
-function UGProject() {
+function PGProject() {
     const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
     const { portfolioData } = useSelector((state) => state.root);
 
     // Safely access awards with optional chaining and provide a default empty array
-    const ugprojects = portfolioData?.ugprojects || [];
+    const pgprojects = portfolioData?.pgprojects || [];
 
     console.log(portfolioData);
     
@@ -90,10 +89,10 @@ function UGProject() {
 
     return (
             <div className="m-10">
-            <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Undergraduate Projects</h1>
+            <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Postgraduate Projects</h1>
             <Table
                 
-                dataSource={ugprojects}
+                dataSource={pgprojects}
                 columns={columns}
                 size="md"
                 rowKey="_id"
@@ -108,11 +107,9 @@ function UGProject() {
                     color: white !important;
                 }
             `}</style>
-            <PGProject/>
         </div>
-
         
     );
 }
 
-export default UGProject;
+export default PGProject;

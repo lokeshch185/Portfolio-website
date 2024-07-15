@@ -11,6 +11,7 @@ const {
   Fprojects,
   Conference,
   UGProject,
+  PGProject,
   ORActivity,
   Awards,
   CurrentPosition,
@@ -32,6 +33,7 @@ router.get("/get-portfolio-data", async (req, res) => {
     const fprojects = await Fprojects.find();
     const conferences = await Conference.find();
     const ugprojects = await UGProject.find();
+    const pgprojects = await PGProject.find();
     const oractivities = await ORActivity.find();
     const awards = await Awards.find();
     const currentpositions = await CurrentPosition.find();
@@ -53,9 +55,11 @@ router.get("/get-portfolio-data", async (req, res) => {
       conferences: conferences,
       oractivities: oractivities,
       ugprojects: ugprojects,
+      pgprojects : pgprojects,
       awards : awards,
       currentpositions : currentpositions,
       pastpositions : pastpositions,
+      
     }
     
   );
@@ -245,6 +249,56 @@ router.post("/delete-ugproject", async (req, res) => {
     res.status(500).send(error);
   }
 });
+
+// add PGproject
+router.post("/add-pgproject", async (req, res) => {
+  try {
+    const pgproject = new PGProject(req.body);
+    await pgproject.save();
+    res.status(200).send({
+      data: pgproject,
+      success: true,
+      message: "PGProject added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update PGProject
+router.post("/update-pgproject", async (req, res) => {
+  try {
+    const pgproject = await PGProject.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: pgproject,
+      success: true,
+      message: "PGProject updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete PGProject
+router.post("/delete-pgproject", async (req, res) => {
+  try {
+    console.log(req.body._id);
+    const pgproject = await PGProject.findOneAndDelete({ _id: req.body._id });
+    console.log(pgproject);
+    res.status(200).send({
+      data: pgproject,
+      success: true,
+      message: "UGProject deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 
 // add award
 router.post("/add-award", async (req, res) => {

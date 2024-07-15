@@ -4,10 +4,10 @@ import { Modal, Form, message } from "antd";
 import { HideLoading, ReloadData, ShowLoading } from "../../redux/rootSlice";
 import axios from "axios";
 
-function AdminfProjects() {
+function AdminPGProjects() {
   const dispatch = useDispatch();
   const { portfolioData } = useSelector((state) => state.root);
-  const { fprojects } = portfolioData;
+  const { pgprojects } = portfolioData;
   const [showAddEditModal, setShowAddEditModal] = React.useState(false);
   const [selectedItemForEdit, setSelectedItemForEdit] = React.useState(null);
   const [type, setType] = React.useState("add");
@@ -17,12 +17,12 @@ function AdminfProjects() {
       dispatch(ShowLoading());
       let response;
       if (selectedItemForEdit) {
-        response = await axios.post("/api/portfolio/update-fprojects", {
+        response = await axios.post("/api/portfolio/update-pgproject", {
           ...values,
           _id: selectedItemForEdit._id,
         });
       } else {
-        response = await axios.post("/api/portfolio/add-fprojects", values);
+        response = await axios.post("/api/portfolio/add-pgproject", values);
       }
 
       dispatch(HideLoading());
@@ -44,9 +44,9 @@ function AdminfProjects() {
   const onDelete = async (item) => {
     try {
       dispatch(ShowLoading());
-      const response = await axios.post("/api/portfolio/delete-fprojects", {
+      const response = await axios.post("/api/portfolio/delete-pgproject", {
         _id: item._id,
-      });
+      }); console.log("req snt");
       dispatch(HideLoading());
       if (response.data.success) {
         message.success(response.data.message);
@@ -71,24 +71,25 @@ function AdminfProjects() {
             setShowAddEditModal(true);
           }}
         >
-          Add Funded Projects
+          Add Post Graduate Project
         </button>
       </div>
       <div className="grid grid-cols-4 gap-5 mt-5 sm:grid-cols-1">
-        {fprojects.map((fprojects) => (
-          <div className="shadow border p-5 border-gray-400 flex flex-col">
+        {pgprojects.map((pgproject) => (
+          <div key={pgproject._id} className="shadow border p-5 border-gray-400 flex flex-col">
             <h1 className="text-primary text-xl font-bold">
-              {fprojects.period}
+              {pgproject.title}
             </h1>
             <hr />
-            <h1>Company : {fprojects.company}</h1>
-            <h1>Role : {fprojects.title}</h1>
-            <h1>{fprojects.description}</h1>
+            <h1>Group Number : {pgproject.group}</h1>
+            <h1>Explanation : {pgproject.abstract}</h1>
+            <h1>{pgproject.description}</h1>
             <div className="flex justify-end gap-5 mt-5">
               <button
                 className="bg-red-500 text-white px-5 py-2 "
                 onClick={() => {
-                  onDelete(fprojects);
+                  onDelete(pgproject);
+                  console.log("deleteclick");
                 }}
               >
                 Delete
@@ -96,7 +97,7 @@ function AdminfProjects() {
               <button
                 className="bg-primary text-white px-5 py-2"
                 onClick={() => {
-                  setSelectedItemForEdit(fprojects);
+                  setSelectedItemForEdit(pgproject);
                   setShowAddEditModal(true);
                   setType("edit");
                 }}
@@ -111,7 +112,9 @@ function AdminfProjects() {
       {(type === "add" || selectedItemForEdit) && (
         <Modal
           visible={showAddEditModal}
-          title={selectedItemForEdit ? "Edit Funded Projects" : "Add Funded Projects"}
+          title={
+            selectedItemForEdit ? "Edit Post Graduate Project" : "Add Project"
+          }
           footer={null}
           onCancel={() => {
             setShowAddEditModal(false);
@@ -123,26 +126,23 @@ function AdminfProjects() {
             onFinish={onFinish}
             initialValues={selectedItemForEdit || {}}
           >
-            <Form.Item name="title" label="title">
-              <input placeholder="title" />
+            <Form.Item name="title" label="Title">
+              <input placeholder="Title" />
             </Form.Item>
-            <Form.Item name="studenabstract video link" label="studenabstract video link">
-              <input placeholder="studenabstract video link" />
+            <Form.Item name="group" label="Group">
+              <input placeholder="Student Group" />
             </Form.Item>
-            <Form.Item name="abstract video link" label="abstract video link">
-              <input placeholder="abstract video link" />
+            <Form.Item name="abstract" label="Abstract">
+              <input placeholder="Abstract" />
             </Form.Item>
-            <Form.Item name="photo" label="photo">
-              <input placeholder="photo" />
+            <Form.Item name="link" label="Link">
+              <input placeholder="Video Link" />
             </Form.Item>
-            <Form.Item name="funding agency name" label="funding agency name">
-              <input placeholder="funding agency name" />
-              </Form.Item>
-              <Form.Item name="amount funded" label="amount funded">
-              <input placeholder="amount funded" />
+            <Form.Item name="photo" label="Photo">
+              <input placeholder="Photo" />
             </Form.Item>
-            <Form.Item name="remark" label="remark">
-              <input placeholder="remark" />
+            <Form.Item name="reportlink" label="Report Link">
+              <input placeholder="Report Link" />
             </Form.Item>
 
             <div className="flex justify-end">
@@ -166,4 +166,4 @@ function AdminfProjects() {
   );
 }
 
-export default AdminfProjects;
+export default AdminPGProjects;

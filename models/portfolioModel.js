@@ -290,6 +290,11 @@ const ugprojectsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  reportlink: {
+    type: String,
+    required: true,
+  },
+  
 });
 
 const currentPositionSchema = new mongoose.Schema({
@@ -363,6 +368,7 @@ module.exports = {
   Fprojects : mongoose.model("fprojects", fprojectsSchema),
   Conference : mongoose.model("conferences", conferencesSchema),
   UGProject : mongoose.model("UGproject", ugprojectsSchema),
+  PGProject : mongoose.model("PGproject", ugprojectsSchema),
   ORActivity : mongoose.model("ORActivity", oractivitySchema),
   Awards : mongoose.model("Awards", awardsSchema),
   CurrentPosition : mongoose.model("CurrentPosition", currentPositionSchema),
