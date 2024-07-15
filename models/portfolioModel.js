@@ -292,6 +292,22 @@ const ugprojectsSchema = new mongoose.Schema({
   },
 });
 
+const currentPositionSchema = new mongoose.Schema({
+  position: {
+    type: String,
+    required: true,
+  },
+  department: {
+    type: String,
+    required: true,
+  },
+  tenure: {
+    type: Date,
+    required: true,
+  },
+  
+});
+
 const awardsSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -315,6 +331,26 @@ const awardsSchema = new mongoose.Schema({
   },
 });
 
+const pastpositionSchema = new mongoose.Schema({
+  position: {
+    type: String,
+    required: true,
+  },
+
+  department: {
+    type: String,
+    required: true,
+  },
+  tenurefrom: {
+    type: Date,
+    required: true,
+  },
+  tenureto: {
+    type: Date,
+    required: true,
+  },
+});
+
 module.exports = {
   Intro: mongoose.model("intros", introSchema),
   About: mongoose.model("abouts", aboutSchema),
@@ -329,4 +365,6 @@ module.exports = {
   UGProject : mongoose.model("UGproject", ugprojectsSchema),
   ORActivity : mongoose.model("ORActivity", oractivitySchema),
   Awards : mongoose.model("Awards", awardsSchema),
+  CurrentPosition : mongoose.model("CurrentPosition", currentPositionSchema),
+  PastPosition : mongoose.model("PastPosition", pastpositionSchema),
 };

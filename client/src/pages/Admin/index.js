@@ -14,6 +14,8 @@ import AdminORActivites from "./AdminORActivities";
 import AdminJournalppr from "./AdminJournalppr";
 import AdminfProjects from "./AdminfProjects";
 import AdminConference from "./AdminConference";
+import AdminCurrentPositions from "./AdminCurrentPositions";
+import AdminPastPositions from "./AdminPastPositions";
 
 const { TabPane } = Tabs;
 
@@ -81,6 +83,12 @@ function Admin() {
             </TabPane>
             <TabPane tab="Conferences" key="13">
               <AdminConference />
+            </TabPane>
+            <TabPane tab="Current Position" key="14">
+              <AdminCurrentPositions />
+            </TabPane>
+            <TabPane tab="Past Position" key="15">
+              <AdminPastPositions />
             </TabPane>
           </Tabs>
         </div>

@@ -13,6 +13,8 @@ const {
   UGProject,
   ORActivity,
   Awards,
+  CurrentPosition,
+  PastPosition
 } = require("../models/portfolioModel");
 const User = require("../models/userModel");
 // get all portfolio data
@@ -32,6 +34,8 @@ router.get("/get-portfolio-data", async (req, res) => {
     const ugprojects = await UGProject.find();
     const oractivities = await ORActivity.find();
     const awards = await Awards.find();
+    const currentpositions = await CurrentPosition.find();
+    const pastpositions = await PastPosition.find();
 
  
 
@@ -50,13 +54,15 @@ router.get("/get-portfolio-data", async (req, res) => {
       oractivities: oractivities,
       ugprojects: ugprojects,
       awards : awards,
+      currentpositions : currentpositions,
+      pastpositions : pastpositions,
     }
     
   );
   console.log("hello");
   } catch (error) {
     res.status(500).send(error);
-  }
+  } 
 });
 
 // update intro
@@ -527,6 +533,106 @@ router.post("/delete-talk", async (req, res) => {
     res.status(500).send(error);
   }
 });
+
+// add currentposition
+
+router.post("/add-currentposition", async (req, res) => {
+  try {
+    const currentpositions = new CurrentPosition(req.body);
+    await currentpositions.save();
+    res.status(200).send({
+      data: currentpositions,
+      success: true,
+      message: "Current Position added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update currentposition
+
+router.post("/update-currentposition", async (req, res) => {
+  try {
+    const currentpositions = await CurrentPosition.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: currentpositions,
+      success: true,
+      message: "Current Position updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete current position
+
+router.post("/delete-currentposition", async (req, res) => {
+  try {
+    const currentpositions = await CurrentPosition.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: currentpositions,
+      success: true,
+      message: "Current Position deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// add pastposition
+
+router.post("/add-pastposition", async (req, res) => {
+  try {
+    const pastpositions = new PastPosition(req.body);
+    await pastpositions.save();
+    res.status(200).send({
+      data: pastpositions,
+      success: true,
+      message: "Past Position added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update pastposition
+router.post("/update-pastposition", async (req, res) => {
+  try {
+    const pastpositions = await PastPosition.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: pastpositions,
+      success: true,
+      message: "Past Position updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete pastposition
+router.post("/delete-pastposition", async (req, res) => {
+  try {
+    const pastpositions = await PastPosition.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: pastpositions,
+      success: true,
+      message: "Past Position deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+
 
 //add conference
 router.post("/add-conference", async (req, res) => {
