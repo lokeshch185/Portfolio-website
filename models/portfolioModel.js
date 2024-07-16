@@ -356,6 +356,39 @@ const pastpositionSchema = new mongoose.Schema({
   },
 });
 
+const interestsSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+});
+
+const patentsSchema = new mongoose.Schema({
+  date: {
+    type: Date,
+    required: true,
+  },
+
+  title: {
+    type: String,
+    required: true,
+  },
+  authors: {
+    type: String,
+    required: true,
+  },
+  organisation: {
+    type: String,
+    required: true,
+  },
+  remarks: {
+    type: String,
+    required: true,
+  },
+  
+  
+});
+
 module.exports = {
   Intro: mongoose.model("intros", introSchema),
   About: mongoose.model("abouts", aboutSchema),
@@ -373,4 +406,6 @@ module.exports = {
   Awards : mongoose.model("Awards", awardsSchema),
   CurrentPosition : mongoose.model("CurrentPosition", currentPositionSchema),
   PastPosition : mongoose.model("PastPosition", pastpositionSchema),
+  Interest: mongoose.model("interests", interestsSchema),
+  Patents: mongoose.model("patents", patentsSchema)
 };

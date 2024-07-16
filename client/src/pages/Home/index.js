@@ -12,6 +12,7 @@ import Projects from "./Projects";
 import Awards from "./Awards";
 import CurrentPosition from "./CurrentPosition";
 import PastPosition from "./PastPosition";
+import Interest from "./Interest";
 
 function Home() {
   const { portfolioData } = useSelector((state) => state.root);
@@ -25,7 +26,7 @@ function Home() {
           <About />
           <CurrentPosition/>
           <PastPosition/>
-          <Experiences />
+          <Interest />
           {/* <Projects />
           <Courses /> */}
           <Awards/>

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Table, Typography} from 'antd';
 import moment from "moment";
 import Journals from "./Journals";
+import Patents from "./Patents";
 
 const { Title, Text } = Typography;
 
@@ -100,6 +101,7 @@ function Conference() {
 
             `}</style>
             <Journals/>
+            <Patents />
         </div>
         
     );

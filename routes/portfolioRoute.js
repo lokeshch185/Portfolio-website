@@ -15,7 +15,9 @@ const {
   ORActivity,
   Awards,
   CurrentPosition,
-  PastPosition
+  PastPosition,
+  Patents,
+  Interest,
 } = require("../models/portfolioModel");
 const User = require("../models/userModel");
 // get all portfolio data
@@ -38,6 +40,8 @@ router.get("/get-portfolio-data", async (req, res) => {
     const awards = await Awards.find();
     const currentpositions = await CurrentPosition.find();
     const pastpositions = await PastPosition.find();
+    const patents = await Patents.find();
+    const interests = await Interest.find();
 
  
 
@@ -59,6 +63,9 @@ router.get("/get-portfolio-data", async (req, res) => {
       awards : awards,
       currentpositions : currentpositions,
       pastpositions : pastpositions,
+      patents : patents,
+      interests:interests,
+
       
     }
     
@@ -491,6 +498,103 @@ router.post("/delete-fprojects", async (req, res) => {
     res.status(500).send(error);
   }
 });
+
+// add patent
+
+router.post("/add-patent", async (req, res) => {
+  try {
+    const patents = new Patents(req.body);
+    await patents.save();
+    res.status(200).send({
+      data: patents,
+      success: true,
+      message: "Patent added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update patent
+router.post("/update-patent", async (req, res) => {
+  try {
+    const patents = await Patents.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: patents,
+      success: true,
+      message: "Patent updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete patent
+router.post("/delete-patent", async (req, res) => {
+  try {
+    const patents = await Patents.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: patents,
+      success: true,
+      message: "Patent deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//add interest
+router.post("/add-interest", async (req, res) => {
+  try {
+    const interest = new Interest(req.body);
+    await interest.save();
+    res.status(200).send({
+      data: interest,
+      success: true,
+      message: "interest added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update interest
+router.post("/update-interest", async (req, res) => {
+  try {
+    const interest = await Interest.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: interest,
+      success: true,
+      message: "Interest updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete interest
+router.post("/delete-interest", async (req, res) => {
+  try {
+    const interest = await Interest.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: interest,
+      success: true,
+      message: "Interest deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+
 
 // add course
 router.post("/add-course", async (req, res) => {

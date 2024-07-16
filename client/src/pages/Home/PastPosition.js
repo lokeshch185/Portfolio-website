@@ -1,49 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import SectionTitle from "../../components/SectionTitle";
 import moment from "moment";
 
 function PastPosition() {
-  const [selectedItemIndex , setSelectedItemIndex] = React.useState(0);
   const { portfolioData } = useSelector((state) => state.root);
   const { pastpositions } = portfolioData;
-  return (
-    <div>
-      <SectionTitle title="Past Positions" />
+  const [expandedIndex, setExpandedIndex] = useState(-1);
 
-      <div className="flex py-10 gap-20 sm:flex-col">
-        <div className="flex flex-col gap-10 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full">
-          {pastpositions.map((pastposition, index) => (
-            <div
-              onClick={() => {
-                setSelectedItemIndex(index);
-              }}
-              className="cursor-pointer"
-            >
-              <h1
-                className={`text-xl px-5
-                 ${
-                   selectedItemIndex === index
-                     ? "text-tertiary border-tertiary border-l-4 -ml-[3px] bg-[#1a7f5a31] py-3"
-                     : "text-white"
-                 } `}
-              >
+  const toggleAccordion = (index) => {
+    if (expandedIndex === index) {
+      setExpandedIndex(-1); // Collapse if already expanded
+    } else {
+      setExpandedIndex(index); // Expand clicked item
+    }
+  };
+
+  return (
+    <div className="container mx-auto px-4 py-4">
+      <SectionTitle text="bold" title="Past Positions" />
+      <div className="space-y-4">
+        {pastpositions.map((pastposition, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-lg overflow-hidden shadow-sm"
+            onMouseEnter={() => toggleAccordion(index)}
+            onMouseLeave={() => toggleAccordion(-1)}
+          >
+            <div className="p-3 cursor-pointer">
+              <h1 className="text-lg font-semibold mb-1">
                 {pastposition.position}
               </h1>
+              {expandedIndex === index && (
+                <div className="mt-2">
+                  <p className="text-sm text-gray-600 font-semibold">
+                    Department: {pastposition.department}
+                  </p>
+                  <div className="text-sm text-gray-600 font-semibold">
+                    <p>From: {moment(pastposition.tenurefrom).format('YYYY-MM-DD')}</p>
+                    <p>To: {moment(pastposition.tenureto).format('YYYY-MM-DD')}</p>
+                  </div>
+                </div>
+              )}
             </div>
-          ))}
-        </div>
-
-        <div className="flex flex-col gap-5">
-          <h1 className="text-secondary text-xl">
-            Department: {pastpositions[selectedItemIndex].department}
-          </h1>
-          <h1 className="text-tertiary text-xl">
-          From : {moment(pastpositions[selectedItemIndex].tenurefrom).format('YYYY-MM-DD')}
-          <br></br>
-          To: {moment(pastpositions[selectedItemIndex].tenureto).format('YYYY-MM-DD')}</h1>
-            
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -26,6 +26,7 @@ import ORActivities from "./pages/Home/ORActivities";
 import Journals from "./pages/Home/Journals";
 import Navbar from "./components/Navbar"; // Import the Navbar component
 import Footer from "./components/Footer";
+import Interest from "./pages/Home/Interest";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -88,6 +89,7 @@ const RoutesWithNavbarAndFooter = ({ loading }) => {
         <Route path="/talks" element={<Talks />} />
         <Route path="/oractivities" element={<ORActivities />} />
         <Route path="/journals" element={<Journals />} />
+        <Route path="/interest" element={<Interest />} />
       </Routes>
       {!isAdminRoute && <Footer />} {/* Conditionally render Footer */}
     </>

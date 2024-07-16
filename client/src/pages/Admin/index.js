@@ -16,6 +16,8 @@ import AdminJournalppr from "./AdminJournalppr";
 import AdminConference from "./AdminConference";
 import AdminCurrentPositions from "./AdminCurrentPositions";
 import AdminPastPositions from "./AdminPastPositions";
+import AdminPatents from "./AdminPatents";
+import AdminInterests from "./AdminInterests";
 
 const { TabPane } = Tabs;
 
@@ -89,6 +91,12 @@ function Admin() {
             </TabPane>
             <TabPane tab="Past Position" key="15">
               <AdminPastPositions />
+            </TabPane>
+            <TabPane tab="Patents" key="16">
+              <AdminPatents />
+            </TabPane>
+            <TabPane tab="Interests" key="17">
+              <AdminInterests />
             </TabPane>
           </Tabs>
         </div>
