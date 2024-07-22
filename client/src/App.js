@@ -96,4 +96,5 @@ const RoutesWithNavbarAndFooter = ({ loading }) => {
   );
 };
 
+
 export default App;

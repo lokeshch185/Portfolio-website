@@ -26,12 +26,13 @@ function Home() {
           <About />
           <CurrentPosition/>
           <PastPosition/>
+          <Experiences/>
           <Interest />
           {/* <Projects />
           <Courses /> */}
           <Awards/>
           <Contact />
-          <Footer />
+          
           <LeftSider />
         </div>
       )}

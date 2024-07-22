@@ -34,6 +34,20 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className='py-5'>
+        <div className=' w-full bg-gray-700'>
+
+        </div>
+
+        <div className='flex items-center justify-center flex-col  opacity-70'>
+              <h1 className="text-white">
+                  Designed and Developed By
+              </h1>
+             <h className="text-white">
+                <span className="text-white">Lokesh Chaudhari</span>
+             </h>
+        </div>
+    </div>
     </footer>
   );
 };

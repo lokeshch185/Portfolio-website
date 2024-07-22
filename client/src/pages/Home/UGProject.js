@@ -89,6 +89,7 @@ function UGProject() {
     ];
 
     return (
+        <>
             <div className="m-10">
             <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Undergraduate Projects</h1>
             <Table
@@ -108,8 +109,10 @@ function UGProject() {
                     color: white !important;
                 }
             `}</style>
-            <PGProject/>
+            
         </div>
+        <PGProject/>
+        </>
 
         
     );

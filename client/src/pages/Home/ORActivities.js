@@ -67,13 +67,14 @@ function ORActivities() {
     ];
 
     return (
+        <>
             <div className="m-10">
-            <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Out Reach Activities</h1>
+            <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Outreach Activities</h1>
             <Table
                 
                 dataSource={oractivities}
                 columns={columns}
-                size="md"
+                size="small"
                 rowKey="_id"
                 pagination={false}
                 className=""
@@ -86,8 +87,10 @@ function ORActivities() {
                     color: white !important;
                 }
             `}</style>
-            <Talks/>
+            
         </div>
+        <Talks/>
+        </>
         
     );
 }
