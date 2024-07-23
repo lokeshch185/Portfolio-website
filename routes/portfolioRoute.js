@@ -18,6 +18,12 @@ const {
   PastPosition,
   Patents,
   Interest,
+  Recognitions,
+  AddPosition,
+  VisitingPosition,
+  Mentored,
+  Flagship,
+  Events
 } = require("../models/portfolioModel");
 const User = require("../models/userModel");
 // get all portfolio data
@@ -42,6 +48,13 @@ router.get("/get-portfolio-data", async (req, res) => {
     const pastpositions = await PastPosition.find();
     const patents = await Patents.find();
     const interests = await Interest.find();
+    const recognitions = await Recognitions.find();
+    const addpositions = await AddPosition.find();
+    const visitingpositions = await VisitingPosition.find();
+    const mentored = await Mentored.find();
+    const flagships = await Flagship.find();
+    const events = await Events.find();
+    
 
  
 
@@ -65,6 +78,13 @@ router.get("/get-portfolio-data", async (req, res) => {
       pastpositions : pastpositions,
       patents : patents,
       interests:interests,
+      recognitions: recognitions,
+      addpositions  : addpositions,
+      visitingpositions : visitingpositions,
+      mentored : mentored,
+      flagships : flagships,
+      events : events,
+
 
       
     }
@@ -455,7 +475,7 @@ router.post("/delete-journal", async (req, res) => {
 //add fprojects
 router.post("/add-fprojects", async (req, res) => {
   try {
-    const fprojects = new fprojects(req.body);
+    const fprojects = new Fprojects(req.body);
     await fprojects.save();
     res.status(200).send({
       data: fprojects,
@@ -470,7 +490,7 @@ router.post("/add-fprojects", async (req, res) => {
 // update fprojects
 router.post("/update-fprojects", async (req, res) => {
   try {
-    const fprojects = await fprojects.findOneAndUpdate(
+    const fprojects = await Fprojects.findOneAndUpdate(
       { _id: req.body._id },
       req.body,
       { new: true }
@@ -478,7 +498,7 @@ router.post("/update-fprojects", async (req, res) => {
     res.status(200).send({
       data: fprojects,
       success: true,
-      message: "fprojects updated successfully",
+      message: "Funded Project updated successfully",
     });
   } catch (error) {
     res.status(500).send(error);
@@ -488,11 +508,105 @@ router.post("/update-fprojects", async (req, res) => {
 // delete fprojects
 router.post("/delete-fprojects", async (req, res) => {
   try {
-    const fprojects = await fprojects.findOneAndDelete({ _id: req.body._id });
+    const fprojects = await Fprojects.findOneAndDelete({ _id: req.body._id });
     res.status(200).send({
       data: fprojects,
       success: true,
-      message: "fprojects deleted successfully",
+      message: "Funded Project deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//add flagship
+router.post("/add-flagship", async (req, res) => {
+  try {
+    const flagship = new Flagship(req.body);
+    await flagship.save();
+    res.status(200).send({
+      data: flagship,
+      success: true,
+      message: "Flagship added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update flagship
+router.post("/update-flagship", async (req, res) => {
+  try {
+    const flagship = await Flagship.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: flagship,
+      success: true,
+      message: "Flagship event updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete flagship
+router.post("/delete-flagship", async (req, res) => {
+  try {
+    const flagship = await Flagship.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: flagship,
+      success: true,
+      message: "Flagship event deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//add event
+router.post("/add-event", async (req, res) => {
+  try {
+    const event = new Events(req.body);
+    await event.save();
+    res.status(200).send({
+      data: event,
+      success: true,
+      message: "Event added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update event
+router.post("/update-event", async (req, res) => {
+  try {
+    const event = await Events.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: event,
+      success: true,
+      message: "Event updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete event
+router.post("/delete-event", async (req, res) => {
+  try {
+    const event = await Events.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: event,
+      success: true,
+      message: "Event deleted successfully",
     });
   } catch (error) {
     res.status(500).send(error);
@@ -547,6 +661,103 @@ router.post("/delete-patent", async (req, res) => {
   }
 });
 
+// add additional position
+
+router.post("/add-addposition", async (req, res) => {
+  try {
+    const addpositions = new AddPosition(req.body);
+    await addpositions.save();
+    res.status(200).send({
+      data: addpositions,
+      success: true,
+      message: "Additional Position added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update additional position
+router.post("/update-addposition", async (req, res) => {
+  try {
+    const addpositions = await AddPosition.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: addpositions,
+      success: true,
+      message: "Additional position updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete additional position
+router.post("/delete-addposition", async (req, res) => {
+  try {
+    const addpositions = await AddPosition.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: addpositions,
+      success: true,
+      message: "AdditionalPosition deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+
+// add visitingposition
+
+router.post("/add-visitingposition", async (req, res) => {
+  try {
+    const visitingpositions = new VisitingPosition(req.body);
+    await visitingpositions.save();
+    res.status(200).send({
+      data: visitingpositions,
+      success: true,
+      message: "Visiting faculty Position added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update visitingposition
+router.post("/update-visitingposition", async (req, res) => {
+  try {
+    const visitingpositions = await VisitingPosition.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: visitingpositions,
+      success: true,
+      message: "Visiting faculty Position updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete visitingposition
+router.post("/delete-visitingposition", async (req, res) => {
+  try {
+    const visitingpositions = await VisitingPosition.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: visitingpositions,
+      success: true,
+      message: "Visiting faculty Position deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 //add interest
 router.post("/add-interest", async (req, res) => {
   try {
@@ -588,6 +799,53 @@ router.post("/delete-interest", async (req, res) => {
       data: interest,
       success: true,
       message: "Interest deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+//add recognition
+router.post("/add-recognition", async (req, res) => {
+  try {
+    const recognition = new Recognitions(req.body);
+    await recognition.save();
+    res.status(200).send({
+      data: recognition,
+      success: true,
+      message: "Recognition added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update recognition
+router.post("/update-recognition", async (req, res) => {
+  try {
+    const recognition = await Recognitions.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: recognition,
+      success: true,
+      message: "Recognition updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete recognition
+router.post("/delete-recognition", async (req, res) => {
+  try {
+    const recognition = await Recognitions.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: recognition,
+      success: true,
+      message: "Recognition deleted successfully",
     });
   } catch (error) {
     res.status(500).send(error);
@@ -833,6 +1091,54 @@ router.post("/delete-conference", async (req, res) => {
       data: conference,
       success: true,
       message: "Conference deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// add mentored
+
+router.post("/add-mentored", async (req, res) => {
+  try {
+    const mentored = new Mentored(req.body);
+    await mentored.save();
+    res.status(200).send({
+      data: mentored,
+      success: true,
+      message: "Mentored added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update mentored
+router.post("/update mentoreds", async (req, res) => {
+  try {
+    const mentored = await Mentored.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: mentored,
+      success: true,
+      message: "Mentored updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete mentored
+router.post("/delete-mentored", async (req, res) => {
+  try {
+    const mentored = await Mentored.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: mentored,
+      success: true,
+      message: "Mentored deleted successfully",
     });
   } catch (error) {
     res.status(500).send(error);

@@ -363,6 +363,17 @@ const interestsSchema = new mongoose.Schema({
   },
 });
 
+const recognitionsSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: Date,
+    required: true,
+  },
+});
+
 const patentsSchema = new mongoose.Schema({
   date: {
     type: Date,
@@ -389,6 +400,105 @@ const patentsSchema = new mongoose.Schema({
   
 });
 
+const addpositionsSchema = new mongoose.Schema({
+  position: {
+    type: String,
+    required: true,
+  },
+
+  department: {
+    type: String,
+    required: true,
+  },
+  
+});
+
+const visitingpositionsSchema = new mongoose.Schema({
+  institute: {
+    type: String,
+    required: true,
+  },
+
+  course: {
+    type: String,
+    required: true,
+  },
+
+  tenure:{
+    type: String,
+    required: true,
+  },
+});
+
+const mentoredSchema = new mongoose.Schema({
+  date: {
+    type: Date,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  organisation: {
+    type: String,
+    required: true,
+  },
+  grantreceived: {
+    type: String,
+    required: true,
+  },
+  remarks: {
+    type: String,
+    required: true,
+  },
+});
+
+const flagshipsSchema = new mongoose.Schema({
+  event: {
+    type: String,
+    required: true,
+  },
+  year: {
+    type: String,
+    required: true,
+  },
+  college: {
+    type: String,
+    required: true,
+  },
+  role: {
+    type: String,
+    required: true,
+  },
+  
+});
+
+const eventsSchema = new mongoose.Schema({
+  
+  event: {
+    type: String,
+    required: true,
+  },
+  venue: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: String,
+    required: true,
+  },
+  role: {
+    type: String,
+    required: true,
+  },
+  weblink: {
+    type: String,
+    required: false,
+  },
+  
+});
+
+
 module.exports = {
   Intro: mongoose.model("intros", introSchema),
   About: mongoose.model("abouts", aboutSchema),
@@ -407,5 +517,11 @@ module.exports = {
   CurrentPosition : mongoose.model("CurrentPosition", currentPositionSchema),
   PastPosition : mongoose.model("PastPosition", pastpositionSchema),
   Interest: mongoose.model("interests", interestsSchema),
-  Patents: mongoose.model("patents", patentsSchema)
+  Patents: mongoose.model("patents", patentsSchema),
+  Recognitions : mongoose.model("recognitions", recognitionsSchema),
+  AddPosition : mongoose.model("AddPosition", addpositionsSchema),
+  VisitingPosition : mongoose.model("VisitingPosition", visitingpositionsSchema),
+  Mentored : mongoose.model("mentored", mentoredSchema),
+  Flagship: mongoose.model("flagships", flagshipsSchema),
+  Events: mongoose.model("events", eventsSchema)
 };

@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { Table, Typography} from 'antd';
 import moment from "moment";
 import PGProject from "./PGProject";
+import Fundedprojects from "./Fundedprojects";
+import Mentored from "./Mentored";
 
 const { Title, Text } = Typography;
 const handleDownloadImage = (url) => {
@@ -20,8 +22,6 @@ function UGProject() {
 
     // Safely access awards with optional chaining and provide a default empty array
     const ugprojects = portfolioData?.ugprojects || [];
-
-    console.log(portfolioData);
     
     // Define table columns
     const columns = [
@@ -112,6 +112,8 @@ function UGProject() {
             
         </div>
         <PGProject/>
+        <Fundedprojects />
+        <Mentored />
         </>
 
         

@@ -13,6 +13,9 @@ import Awards from "./Awards";
 import CurrentPosition from "./CurrentPosition";
 import PastPosition from "./PastPosition";
 import Interest from "./Interest";
+import Recognitions from "./Recognitions";
+import AddPosition from "./AddPosition";
+import VisitingPosition from "./VisitingPosition";
 
 function Home() {
   const { portfolioData } = useSelector((state) => state.root);
@@ -26,11 +29,15 @@ function Home() {
           <About />
           <CurrentPosition/>
           <PastPosition/>
+          <AddPosition />
+          <VisitingPosition />
           <Experiences/>
           <Interest />
           {/* <Projects />
           <Courses /> */}
           <Awards/>
+          <Recognitions />
+
           <Contact />
           
           <LeftSider />

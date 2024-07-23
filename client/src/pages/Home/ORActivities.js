@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import { Table, Typography} from 'antd';
 import moment from "moment";
 import Talks from "./Talks"
+import Flagship from "./Flagship";
+import Events from "./Events";
 
 const { Title, Text } = Typography;
 
@@ -90,6 +92,8 @@ function ORActivities() {
             
         </div>
         <Talks/>
+        {/* <Flagship />
+        <Events /> */}
         </>
         
     );

@@ -1,0 +1,49 @@
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import SectionTitle from "../../components/SectionTitle";
+import moment from "moment";
+
+function AddPosition() {
+  const { portfolioData } = useSelector((state) => state.root);
+  const { addpositions } = portfolioData;
+  const [expandedIndex, setExpandedIndex] = useState(-1);
+
+  const toggleAccordion = (index) => {
+    if (expandedIndex === index) {
+      setExpandedIndex(-1); // Collapse if already expanded
+    } else {
+      setExpandedIndex(index); // Expand clicked item
+    }
+  };
+
+  return (
+    <div className="container mx-auto px-4 py-4">
+      <SectionTitle text="bold" title="Additional Positions" />
+      <div className="space-y-4">
+        {addpositions.map((addposition, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-lg overflow-hidden shadow-sm"
+            onMouseEnter={() => toggleAccordion(index)}
+            onMouseLeave={() => toggleAccordion(-1)}
+          >
+            <div className="p-3 cursor-pointer">
+              <h1 className="text-lg font-semibold mb-1">
+                {addposition.position}
+              </h1>
+              {expandedIndex === index && (
+                <div className="mt-2">
+                  <p className="text-sm text-gray-600 font-semibold">
+                    At: {addposition.department}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default AddPosition;
