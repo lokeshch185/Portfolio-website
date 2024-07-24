@@ -38,8 +38,6 @@ function Home() {
           {/* <Projects />
           <Courses /> */}
           <Awards/>
-          <Flagship />
-          <Events />
           <Recognitions />
 
           <Contact />

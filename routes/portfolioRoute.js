@@ -23,7 +23,9 @@ const {
   VisitingPosition,
   Mentored,
   Flagship,
-  Events
+  Events,
+  FDP,
+  WorkShops,
 } = require("../models/portfolioModel");
 const User = require("../models/userModel");
 // get all portfolio data
@@ -54,7 +56,8 @@ router.get("/get-portfolio-data", async (req, res) => {
     const mentored = await Mentored.find();
     const flagships = await Flagship.find();
     const events = await Events.find();
-    
+    const fdps = await FDP.find();
+    const workshops = await WorkShops.find();
 
  
 
@@ -84,6 +87,9 @@ router.get("/get-portfolio-data", async (req, res) => {
       mentored : mentored,
       flagships : flagships,
       events : events,
+      fdps: fdps,
+      workshops: workshops,
+
 
 
       
@@ -655,6 +661,102 @@ router.post("/delete-patent", async (req, res) => {
       data: patents,
       success: true,
       message: "Patent deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// add fdp
+
+router.post("/add-fdp", async (req, res) => {
+  try {
+    const fdp = new FDP(req.body);
+    await fdp.save();
+    res.status(200).send({
+      data: fdp,
+      success: true,
+      message: "FDP added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update fdp
+router.post("/update-fdp", async (req, res) => {
+  try {
+    const fdp = await FDP.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: fdp,
+      success: true,
+      message: "FDP updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete fdp
+router.post("/delete-fdp", async (req, res) => {
+  try {
+    const fdp = await FDP.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: fdp,
+      success: true,
+      message: "FDP deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// add workshop
+
+router.post("/add-workshops", async (req, res) => {
+  try {
+    const workshops = new WorkShops(req.body);
+    await workshops.save();
+    res.status(200).send({
+      data: workshops,
+      success: true,
+      message: "Workshop added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update workshop
+router.post("/update-workshops", async (req, res) => {
+  try {
+    const workshops = await WorkShops.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: workshops,
+      success: true,
+      message: "FDP updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete workshop
+router.post("/delete-workshops", async (req, res) => {
+  try {
+    const workshops = await WorkShops.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: workshops,
+      success: true,
+      message: "Workshop deleted successfully",
     });
   } catch (error) {
     res.status(500).send(error);

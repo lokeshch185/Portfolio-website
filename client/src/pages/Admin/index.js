@@ -25,6 +25,8 @@ import AdminVisitingPositions from "./AdminVisitingPositions";
 import AdminMentored from "./AdminMentored";
 import AdminEvents from "./AdminEvents";
 import AdminFlagship from "./AdminFlagship";
+import AdminFDP from "./AdminFDP";
+import AdminWorkshops from "./AdminWorkshops";
 
 const { TabPane } = Tabs;
 
@@ -125,6 +127,12 @@ function Admin() {
             </TabPane>
             <TabPane tab="Events" key="24">
               <AdminEvents />
+            </TabPane>
+            <TabPane tab="FDP" key="25">
+              <AdminFDP />
+            </TabPane>
+            <TabPane tab="Workshop" key="26">
+              <AdminWorkshops />
             </TabPane>
           </Tabs>
         </div>
