@@ -16,6 +16,8 @@ import Interest from "./Interest";
 import Recognitions from "./Recognitions";
 import AddPosition from "./AddPosition";
 import VisitingPosition from "./VisitingPosition";
+import Flagship from "./Flagship";
+import Events from "./Events";
 
 function Home() {
   const { portfolioData } = useSelector((state) => state.root);
@@ -36,6 +38,8 @@ function Home() {
           {/* <Projects />
           <Courses /> */}
           <Awards/>
+          <Flagship />
+          <Events />
           <Recognitions />
 
           <Contact />

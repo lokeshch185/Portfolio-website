@@ -92,8 +92,8 @@ function ORActivities() {
             
         </div>
         <Talks/>
-        {/* <Flagship />
-        <Events /> */}
+        <Flagship />
+        <Events />
         </>
         
     );

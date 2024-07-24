@@ -6,6 +6,7 @@ function Flagship() {
     const { loading, portfolioData } = useSelector((state) => state.root);
     const { flagships } = portfolioData;
     console.log(portfolioData);
+    console.log(flagships);
     return (
         <div>
             <SectionTitle title="Flagship Events" />
