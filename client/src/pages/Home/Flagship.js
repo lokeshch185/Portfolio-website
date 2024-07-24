@@ -15,7 +15,7 @@ function Flagship() {
                 <ul>
                     {flagships.map((flagship, index) => (
                         <li key={index} className ="">
-                            {`${flagship.event} [${flagship.year}] at ${flagship.venue}`}
+                            {`${flagship.event} [${flagship.year}] at ${flagship.college}`}
                             <br />
                             {`Role: ${flagship.role}`}
                         </li>
