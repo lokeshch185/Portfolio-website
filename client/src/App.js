@@ -29,6 +29,7 @@ import Footer from "./components/Footer";
 import Interest from "./pages/Home/Interest";
 import Flagship from "./pages/Home/Flagship";
 import Events from "./pages/Home/Events";
+import Fundedprojects from "./pages/Home/Fundedprojects"
 
 const App = () => {
   const dispatch = useDispatch();
@@ -82,7 +83,7 @@ const RoutesWithNavbarAndFooter = ({ loading }) => {
         <Route path="/admin-login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/experiences" element={<Experiences />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects" element={<Fundedprojects />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/ugproject" element={<UGProject />} />

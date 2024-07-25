@@ -35,17 +35,9 @@ function Home() {
           <VisitingPosition />
           <Experiences/>
           <Interest />
-          <Projects />
-          <Courses />
           <Awards/>
-<<<<<<< HEAD
-          
-=======
->>>>>>> 52b6b3032f6b048b43136ab539156602df36287e
           <Recognitions />
-
           <Contact />
-          
           <LeftSider />
         </div>
       )}
