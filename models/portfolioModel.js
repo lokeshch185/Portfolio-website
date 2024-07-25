@@ -498,6 +498,48 @@ const eventsSchema = new mongoose.Schema({
   
 });
 
+const fdpSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+
+  description: {
+    type: String,
+    required: true,
+  },
+  from: {
+    type: Date,
+    required: true,
+  },
+  to: {
+    type: Date,
+    required: true,
+  },
+
+});
+const workshopsSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  from: {
+    type: Date,
+    required: true,
+  },
+  to: {
+    type: Date,
+    required: true,
+  },
+
+  
+});
+
+
 
 module.exports = {
   Intro: mongoose.model("intros", introSchema),
@@ -523,5 +565,7 @@ module.exports = {
   VisitingPosition : mongoose.model("VisitingPosition", visitingpositionsSchema),
   Mentored : mongoose.model("mentored", mentoredSchema),
   Flagship: mongoose.model("flagships", flagshipsSchema),
-  Events: mongoose.model("events", eventsSchema)
+  Events: mongoose.model("events", eventsSchema),
+  FDP:  mongoose.model("fdp", fdpSchema),
+  WorkShops: mongoose.model("workshops", workshopsSchema),
 };
