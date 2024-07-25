@@ -35,11 +35,10 @@ function Home() {
           <VisitingPosition />
           <Experiences/>
           <Interest />
-          {/* <Projects />
-          <Courses /> */}
+          <Projects />
+          <Courses />
           <Awards/>
-          <Flagship />
-          <Events />
+          
           <Recognitions />
 
           <Contact />
