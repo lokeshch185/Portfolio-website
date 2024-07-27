@@ -26,7 +26,7 @@ function Home() {
       {/* <Header /> */}
 
       {portfolioData && (
-        <div className="bg-primary px-40 sm:px-10 ">
+        <div className="bg-primary ">
           <Intro />
           <About />
           <CurrentPosition/>
