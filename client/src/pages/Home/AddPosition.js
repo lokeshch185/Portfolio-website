@@ -6,38 +6,26 @@ import moment from "moment";
 function AddPosition() {
   const { portfolioData } = useSelector((state) => state.root);
   const { addpositions } = portfolioData;
-  const [expandedIndex, setExpandedIndex] = useState(-1);
 
-  const toggleAccordion = (index) => {
-    if (expandedIndex === index) {
-      setExpandedIndex(-1); // Collapse if already expanded
-    } else {
-      setExpandedIndex(index); // Expand clicked item
-    }
-  };
 
   return (
-    <div className="container mx-auto px-4 py-4">
+    <div className="container mx-auto px-4 py-4 bg-gray-50">
       <SectionTitle text="bold" title="Additional Positions" />
-      <div className="space-y-4">
+      <div>
         {addpositions.map((addposition, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg overflow-hidden shadow-sm"
-            onMouseEnter={() => toggleAccordion(index)}
-            onMouseLeave={() => toggleAccordion(-1)}
+            className="bg-gray-200 rounded-sm shadow-sm p-1 mb-2 sm:w-full lg:w-1/2 hover:scale-105"
           >
-            <div className="p-3 cursor-pointer">
-              <h1 className="text-lg font-semibold mb-1">
+            <div className="">
+              <h1 className="text-md font-semibold">
                 {addposition.position}
               </h1>
-              {expandedIndex === index && (
-                <div className="mt-2">
-                  <p className="text-sm text-gray-600 font-semibold">
-                    At: {addposition.department}
-                  </p>
-                </div>
-              )}
+              <div className="">
+                <p className="text-xs text-gray-600 f">
+                  {addposition.department}
+                </p>
+              </div>
             </div>
           </div>
         ))}

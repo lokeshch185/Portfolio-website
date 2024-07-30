@@ -13,8 +13,8 @@ function CurrentPosition() {
     <div>
       <SectionTitle title="Awards" />
 
-      <div className="flex py-10 gap-20 sm:flex-col">
-        <div className="flex flex-col gap-10 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full">
+      <div className="flex py-10 gap-10 sm:flex-col">
+        <div className="flex flex-col gap-5 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full">
           {awards.map((award, index) => (
             <div
               onClick={() => {
@@ -27,7 +27,7 @@ function CurrentPosition() {
                  ${
                    selectedItemIndex === index
                      ? "text-tertiary border-tertiary border-l-4 -ml-[3px] bg-[#1a7f5a31] py-3"
-                     : "text-white"
+                     : "text-black"
                  } `}
               >
                 {award.title}

@@ -24,7 +24,7 @@ function Experiences() {
                  ${
                    selectedItemIndex === index
                      ? "text-tertiary border-tertiary border-l-4 -ml-[3px] bg-[#1a7f5a31] py-3"
-                     : "text-white"
+                     : "text-black"
                  } `}
               >
                 {experience.period}
@@ -33,14 +33,14 @@ function Experiences() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col justify-center gap-5">
           <h1 className="text-secondary text-xl">
             {experiences[selectedItemIndex].title}
           </h1>
           <h1 className="text-tertiary text-xl">
             {experiences[selectedItemIndex].company}
           </h1>
-          <p className="text-white">
+          <p className="text-black">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
             expedita accusantium nulla ad odio quisquam consequuntur laudantium
             saepe ratione consectetur optio necessitatibus ut, impedit ducimus

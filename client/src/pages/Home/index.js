@@ -26,12 +26,12 @@ function Home() {
       {/* <Header /> */}
 
       {portfolioData && (
-        <div className="bg-primary ">
+        <div className="">
           <Intro />
           <About />
-          <CurrentPosition/>
-          <PastPosition/>
+          <CurrentPosition/>          
           <AddPosition />
+          <PastPosition/>
           <VisitingPosition />
           <Experiences/>
           <Interest />

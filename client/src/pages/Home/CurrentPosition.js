@@ -6,42 +6,31 @@ import moment from "moment";
 function CurrentPosition() {
   const { portfolioData } = useSelector((state) => state.root);
   const { currentpositions } = portfolioData;
-  const [expandedIndex, setExpandedIndex] = useState(-1); // -1 means none is expanded initially
-
-  const handleHover = (index) => {
-    setExpandedIndex(index); // Expand hovered item
-  };
-
-  const handleHoverLeave = () => {
-    setExpandedIndex(-1); // Collapse on hover leave
-  };
 
   return (
-    <div className="container mx-auto px-4 py-4">
+    <div className=" m-auto px-4 py-4 bg-gray-50 ">
       <SectionTitle text="bold" title="Current Positions" />
-      <div className="space-y-4">
+      <div className="flex flex-col justify-center">
         {currentpositions.map((currentposition, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg overflow-hidden shadow-sm"
-            onMouseEnter={() => handleHover(index)}
-            onMouseLeave={handleHoverLeave}
+            className="border-b-2 w-full lg:w-1/2 bg-slate-200 mb-2 p-1 rounded-sm"
           >
-            <div className="p-3 cursor-pointer">
-              <h1 className="text-lg font-semibold mb-1">
+            <div className="pt-1">
+              <h1 className="text-md font-semibold">
                 {currentposition.position}
               </h1>
-              {expandedIndex === index && (
-                <div className="mt-2">
-                  <p className="text-sm text-gray-600 font-semibold">
+             
+                <div className="p-0 gap-0">
+                  <p className="text-xs text-gray-600 font-semibold">
                     Department: {currentposition.department}
                   </p>
-                  <p className="text-sm text-gray-600 font-semibold">
+                  <p className="text-xs text-gray-600 font-semibold">
                     Working from:{" "}
                     {moment(currentposition.tenure).format("YYYY-MM-DD")}
                   </p>
                 </div>
-              )}
+       
             </div>
           </div>
         ))}
