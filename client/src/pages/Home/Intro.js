@@ -20,7 +20,7 @@ function Intro() {
         <a
           href="/profilepicture.jpg"
           download
-          className="block border-2 border-yellow-600 rounded-lg px-3 py-2 text-yellow-400 cursor-pointer hover:bg-yellow-600 hover:text-yellow-200"
+          className="block border-2 border-secondary rounded-lg px-3 py-2 text-secondary font-semibold cursor-pointer hover:bg-secondary hover:text-primary"
         >
           Resume
         </a>

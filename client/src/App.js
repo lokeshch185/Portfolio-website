@@ -30,6 +30,7 @@ import Interest from "./pages/Home/Interest";
 import Flagship from "./pages/Home/Flagship";
 import Events from "./pages/Home/Events";
 import Fundedprojects from "./pages/Home/Fundedprojects"
+import Experience1 from "./pages/Home/Experience1";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -86,15 +87,17 @@ const RoutesWithNavbarAndFooter = ({ loading }) => {
         <Route path="/projects" element={<Fundedprojects />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/ugproject" element={<UGProject />} />
-        <Route path="/pgproject" element={<PGProject />} />
         <Route path="/conference" element={<Conference />} />
-        <Route path="/talks" element={<Talks />} />
         <Route path="/oractivities" element={<ORActivities />} />
         <Route path="/journals" element={<Journals />} />
         <Route path="/interest" element={<Interest />} />
         <Route path="/fs" element={<Flagship />} />
         <Route path="/ev" element={<Events />} />
+        <Route path ="/load" element = {<Loader/>} />
+
+        {/* <Route path="/ugproject" element={<UGProject />} />
+        <Route path="/pgproject" element={<PGProject />} />
+        <Route path="/talks" element={<Talks />} /> */}
       </Routes>
       {!isAdminRoute && <Footer />} {/* Conditionally render Footer */}
     </>

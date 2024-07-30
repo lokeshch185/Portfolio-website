@@ -21,7 +21,7 @@ const NavBar = (props) => {
           <Row>
             <Col xl={12} lg={12} md={12} sm={20} xs={20}>
               <Title id='title-button' level={4}>
-                <a onClick={() => gotoPage('/')}>Lokesh Chaudhari</a>
+                <a onClick={() => gotoPage('/')}>Kiran Talele</a>
               </Title>
             </Col>
             <Col xl={12} lg={12} md={12} sm={4} xs={4}>
@@ -48,6 +48,9 @@ const NavBar = (props) => {
                 </Menu.Item> */}
                 <Menu.Item key="oractivities" onClick={() => gotoPage("/oractivities")}>
                   OutReach Activities
+                </Menu.Item>
+                <Menu.Item key="events" onClick={() => gotoPage("/fs")}>
+                  Events
                 </Menu.Item>
                 {/* <Menu.Item key="journals" onClick={() => gotoPage("/journals")}>
                   Journals

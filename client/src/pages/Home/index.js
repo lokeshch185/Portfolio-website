@@ -18,6 +18,7 @@ import AddPosition from "./AddPosition";
 import VisitingPosition from "./VisitingPosition";
 import Flagship from "./Flagship";
 import Events from "./Events";
+import Experience1 from "./Experience1";
 
 function Home() {
   const { portfolioData } = useSelector((state) => state.root);
@@ -33,12 +34,12 @@ function Home() {
           <AddPosition />
           <PastPosition/>
           <VisitingPosition />
-          <Experiences/>
+          {/* <Experiences/> */}
+          <Experience1 />
+          <Awards/> 
           <Interest />
-          <Awards/>
           <Recognitions />
-          <Contact />
-          <LeftSider />
+          {/* <LeftSider /> */}
         </div>
       )}
     </div>

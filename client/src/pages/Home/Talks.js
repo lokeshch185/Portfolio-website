@@ -71,7 +71,7 @@ function Talks() {
         <div>
           
         <div className="m-10">
-            <h1 className="flex justify-center items-center text-4xl text-primary font-semibold">Talks</h1>
+            <h1 className="flex justify-center items-center text-4xl text-primary font-semibold mb-7">Talks</h1>
         <Table
             dataSource={talks}
             columns={columns}

@@ -5,6 +5,8 @@ import moment from "moment";
 import Talks from "./Talks"
 import Flagship from "./Flagship";
 import Events from "./Events";
+import Workshops from "./Workshops";
+import FDP from "./FDP";
 
 const { Title, Text } = Typography;
 
@@ -92,8 +94,10 @@ function ORActivities() {
             
         </div>
         <Talks/>
-        <Flagship />
-        <Events />
+        {/* <Flagship />
+        <Events /> */}
+        <FDP />
+        <Workshops />
         </>
         
     );

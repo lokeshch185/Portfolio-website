@@ -9,13 +9,13 @@ function Interest() {
   // console.log(portfolioData);
   // const { skills, lottieURL, description1, description2 } = interests;
   return (
-    <div>
-      <SectionTitle title="Areas Of Interest" />
+    <div className="mt-3 container mx-auto px-4 py-4">
+      <SectionTitle text = "bold" title="Areas Of Interest" />
 
-      <div className="flex w-full items-center sm:flex-col">
+      <div className="space-y-4">
         <ul>
           {interests.map((interest, index) => (
-            <li key={index} className="text-white">
+            <li key={index} className="text-lg font-semibold mb-1">
               {interest.title}
             </li>
           ))}

@@ -1216,7 +1216,7 @@ router.post("/add-mentored", async (req, res) => {
 });
 
 // update mentored
-router.post("/update mentoreds", async (req, res) => {
+router.post("/update-mentored", async (req, res) => {
   try {
     const mentored = await Mentored.findOneAndUpdate(
       { _id: req.body._id },

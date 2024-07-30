@@ -10,10 +10,10 @@ function CurrentPosition() {
   const { portfolioData } = useSelector((state) => state.root);
   const { awards } = portfolioData;
   return (
-    <div>
+    <div className="mx-auto bg-slate-200 px-5 pt-5">
       <SectionTitle title="Awards" />
 
-      <div className="flex py-10 gap-10 sm:flex-col">
+      <div className="flex py-5 gap-10  sm:flex-col ">
         <div className="flex flex-col gap-5 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full">
           {awards.map((award, index) => (
             <div
@@ -26,7 +26,7 @@ function CurrentPosition() {
                 className={`text-xl px-5
                  ${
                    selectedItemIndex === index
-                     ? "text-tertiary border-tertiary border-l-4 -ml-[3px] bg-[#1a7f5a31] py-3"
+                     ? "text-black border-tertiary border-l-4  bg-slate-400 ml-3 py-3"
                      : "text-black"
                  } `}
               >
@@ -36,21 +36,21 @@ function CurrentPosition() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-5 items-center">
+        <div className="flex flex-col gap-5 items-center ">
         <img 
             src={awards[selectedItemIndex].photo} 
             alt={awards[selectedItemIndex].title} 
-            className="w-64 h-auto object-cover rounded-lg"
+            className="w-48 h-68 object-cover rounded-lg ml-3"
           />
         </div>
         <div>
-        <h1 className="text-tertiary text-xl">
+        <h1 className="text-primary text-xl flex justify-center">
             Date: {moment(awards[selectedItemIndex].date).format('YYYY-MM-DD')}
           </h1>
-          <h1 className="text-tertiary text-xl">
+          <h1 className="text-primary text-xl flex justify-center">
             Organisation : {awards[selectedItemIndex].organisation}
           </h1>
-          <h1 className="text-secondary text-xl">
+          <h1 className="text-secondary text-xl flex justify-center ">
             {awards[selectedItemIndex].remark}
           </h1>
           

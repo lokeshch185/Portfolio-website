@@ -8,14 +8,14 @@ function Recognitions() {
   const { recognitions } = portfolioData;
    console.log(recognitions);
   return (
-    <div>
-      <SectionTitle title="Recognitions" />
+    <div className="container mx-auto -mt-5 px-4 py-4 mb-5">
+      <SectionTitle text = "bold" title="Recognitions" />
 
-      <div className="flex w-full items-center sm:flex-col">
+      <div className="space-y-4">
         <ul>
           {recognitions.map((recognition, index) => (
-            <li key={index} className="text-white">
-              Recognized as {recognition.title} with effect from {moment(recognition.date).format('YYYY-MM-DD')}
+            <li key={index} className="font-semibold mb-1 py-1" style={{ fontSize: '17px' }}>
+             • Recognized as {recognition.title} with effect from {moment(recognition.date).format('YYYY-MM-DD')}
             </li>
           ))}
         </ul>
