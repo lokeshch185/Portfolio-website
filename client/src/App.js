@@ -91,7 +91,7 @@ const RoutesWithNavbarAndFooter = ({ loading }) => {
         <Route path="/oractivities" element={<ORActivities />} />
         <Route path="/journals" element={<Journals />} />
         <Route path="/interest" element={<Interest />} />
-        <Route path="/fs" element={<Flagship />} />
+        <Route path="/events" element={<Flagship />} />
         <Route path="/ev" element={<Events />} />
         <Route path ="/load" element = {<Loader/>} />
 

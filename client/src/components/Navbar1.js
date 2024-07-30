@@ -6,6 +6,7 @@ import './Navbar.css'
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
+const {SubMenu} = Menu;
 
 const NavBar = (props) => {
   const navigate = useNavigate();
@@ -34,42 +35,21 @@ const NavBar = (props) => {
                 <Menu.Item key="home" onClick={() => gotoPage("/")}>
                   Home
                 </Menu.Item>
-                {/* <Menu.Item key="award" onClick={() => gotoPage("/award")}>
-                  Awards
-                </Menu.Item> */}
+                
                 <Menu.Item key="projects" onClick={() => gotoPage("/projects")}>
                 Projects
                 </Menu.Item>
                 <Menu.Item key="conference" onClick={() => gotoPage("/conference")}>
                 Publications
                 </Menu.Item>
-                {/* <Menu.Item key="talks" onClick={() => gotoPage("/talks")}>
-                  Talks
-                </Menu.Item> */}
+                
                 <Menu.Item key="oractivities" onClick={() => gotoPage("/oractivities")}>
                   OutReach Activities
                 </Menu.Item>
                 <Menu.Item key="events" onClick={() => gotoPage("/events")}>
                   Events
                 </Menu.Item>
-                {/* <Menu.Item key="journals" onClick={() => gotoPage("/journals")}>
-                  Journals
-                </Menu.Item> */}
-                {/* <Menu.Item key="about" onClick={() => gotoPage("/about")}>
-                  About
-                </Menu.Item>
-                <Menu.Item key="experiences" onClick={() => gotoPage("/experiences")}>
-                  Experiences
-                </Menu.Item> */}
-                {/* <Menu.Item key="courses" onClick={() => gotoPage("/courses")}>
-                  Courses
-                </Menu.Item> */}
-                {/* <Menu.Item key="projects" onClick={() => gotoPage("/projects")}>
-                  Projects
-                </Menu.Item>
-                <Menu.Item key="contact" onClick={() => gotoPage("/contact")}>
-                  Contact
-                </Menu.Item> */}
+                
               </Menu>
             </Col>
           </Row>
