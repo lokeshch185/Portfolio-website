@@ -8,7 +8,7 @@ function Recognitions() {
   const { recognitions } = portfolioData;
    console.log(recognitions);
   return (
-    <div className="container mx-auto -mt-5 px-4 py-4 mb-5">
+    <div className="bg-slate-50 container mx-auto -mt-5 px-4 py-4 mb-5">
       <SectionTitle text = "bold" title="Recognitions" />
 
       <div className="space-y-4">

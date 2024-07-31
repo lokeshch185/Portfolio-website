@@ -4,6 +4,7 @@ import { MenuOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css'
 
+
 const { Header, Content } = Layout;
 const { Title } = Typography;
 
@@ -13,6 +14,10 @@ const NavBar = (props) => {
   const gotoPage = (page) => {
     navigate(page);
   };
+
+
+
+
 
   return (
     <Row justify='center'>
@@ -52,6 +57,7 @@ const NavBar = (props) => {
                 <Menu.Item key="events" onClick={() => gotoPage("/events")}>
                   Events
                 </Menu.Item>
+              
                 {/* <Menu.Item key="journals" onClick={() => gotoPage("/journals")}>
                   Journals
                 </Menu.Item> */}

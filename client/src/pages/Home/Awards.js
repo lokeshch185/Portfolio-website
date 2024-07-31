@@ -10,7 +10,7 @@ function CurrentPosition() {
   const { portfolioData } = useSelector((state) => state.root);
   const { awards } = portfolioData;
   return (
-    <div className="mx-auto bg-slate-200 px-5 pt-5">
+    <div className="bg-slate-50 mx-auto px-5 pt-5">
       <SectionTitle title="Awards" />
 
       <div className="flex py-5 gap-10  sm:flex-col ">

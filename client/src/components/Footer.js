@@ -20,7 +20,7 @@ const Footer = () => {
           <button
           onClick={handleClick}
           >
-          <a href="#" className="text-gray-400 hover:text-white">
+          <a href="" className="text-gray-400 hover:text-white">
             <FontAwesomeIcon icon={faLinkedin} />
           </a>
           </button>
