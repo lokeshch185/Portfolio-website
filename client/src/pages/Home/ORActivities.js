@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useSelector } from "react-redux";
 import { Table, Typography} from 'antd';
 import moment from "moment";
@@ -11,7 +11,7 @@ import FDP from "./FDP";
 const { Title, Text } = Typography;
 
 function ORActivities() {
-    const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
+
     const { portfolioData } = useSelector((state) => state.root);
 
     // Safely access awards with optional chaining and provide a default empty array

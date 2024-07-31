@@ -1,12 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import SectionTitle from "../../components/SectionTitle";
 import { current } from "@reduxjs/toolkit";
 import moment from "moment";
 
 
-function CurrentPosition() {
-  const [selectedItemIndex , setSelectedItemIndex] = React.useState(0);
+function Awards() {
+  const [selectedItemIndex , setSelectedItemIndex] = useState(0);
   const { portfolioData } = useSelector((state) => state.root);
   const { awards } = portfolioData;
   return (
@@ -60,4 +60,4 @@ function CurrentPosition() {
   );
 }
 
-export default CurrentPosition;
+export default Awards;

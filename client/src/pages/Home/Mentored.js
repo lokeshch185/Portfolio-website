@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useSelector } from "react-redux";
 import { Table, Typography } from 'antd';
 import moment from "moment";
@@ -11,7 +11,7 @@ import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 const {Title, Text} = Typography;
 
 function Mentored() {
-    const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
+
     const { portfolioData } = useSelector((state) => state.root);
 
     // Safely access awards with optional chaining and provide a default empty array

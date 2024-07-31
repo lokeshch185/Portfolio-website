@@ -1,12 +1,12 @@
-import React from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import SectionTitle from "../../components/SectionTitle";
 
 function Experience1() {
-  const [selectedItemIndex , setSelectedItemIndex] = React.useState(0);
+  const [selectedItemIndex , setSelectedItemIndex] = useState(0);
   const { portfolioData } = useSelector((state) => state.root);
   const { experiences } = portfolioData;
-  const expRef = React.useRef(null);
+ 
 
   return (
     <div className="bg-slate-200 container mx-auto px-4 py-4">

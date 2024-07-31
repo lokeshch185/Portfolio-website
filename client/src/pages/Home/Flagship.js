@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useSelector } from "react-redux";
 import SectionTitle from "../../components/SectionTitle";
 import Events from "./Events";

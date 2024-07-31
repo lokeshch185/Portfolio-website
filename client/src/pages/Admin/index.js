@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import AdminIntro from "./AdminIntro";
 import AdminAbout from "./AdminAbout";
 import Experiences from "./AdminExperiences";
-import AdminProjects from "./AdminProjects";
 import AdminCourses from "./AdminCourses";
 import AdminContact from "./AdminContact";
 import AdminAwards from "./AdminAwards";
@@ -65,12 +64,9 @@ function Admin() {
             <TabPane tab="Experiences" key="3">
               <Experiences />
             </TabPane>
-            <TabPane tab="Projects" key="4">
-              <AdminProjects />
-            </TabPane>
-            <TabPane tab="Courses" key="5">
+            {/* <TabPane tab="Courses" key="5">
               <AdminCourses />
-            </TabPane>
+            </TabPane> */}
             <TabPane tab="Contact" key="6">
               <AdminContact />
             </TabPane>

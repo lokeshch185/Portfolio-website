@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Modal, Form, message } from "antd";
 import { HideLoading, ReloadData, ShowLoading } from "../../redux/rootSlice";
@@ -8,9 +8,9 @@ function AdminJournalppr() {
   const dispatch = useDispatch();
   const { portfolioData } = useSelector((state) => state.root);
   const { journals } = portfolioData;
-  const [showAddEditModal, setShowAddEditModal] = React.useState(false);
-  const [selectedItemForEdit, setSelectedItemForEdit] = React.useState(null);
-  const [type, setType] = React.useState("add");
+  const [showAddEditModal, setShowAddEditModal] = useState(false);
+  const [selectedItemForEdit, setSelectedItemForEdit] = useState(null);
+  const [type, setType] = useState("add");
 
   const onFinish = async (values) => {
     try {
