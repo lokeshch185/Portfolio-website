@@ -9,7 +9,7 @@ function Interest() {
   // console.log(portfolioData);
   // const { skills, lottieURL, description1, description2 } = interests;
   return (
-    <div className="bg-slate-50 mt-3 container -mt-2 mb-2 px-4 py-4">
+    <div className="bg-slate-50 container -mt-2 mb-2 px-4 py-4">
       <SectionTitle text = "bold" title="Areas Of Interest" />
 
       <div className="space-y-4">
