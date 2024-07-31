@@ -12,11 +12,9 @@ function Experience1() {
     <div className="bg-slate-200 container mx-auto px-4 py-4">
       <SectionTitle title="Teaching Experience" />
 
-      {/* <div className="h-[vh-2]  flex py-10 gap-20 sm:flex-col">
-        <div className="overflow-y-scroll  flex flex-col gap-7 border-l-2 border-[#135e4c82] sm:flex-row sm:overflow-x-scroll sm:w-full w-1/4"> */}
+      
          <div className=" flex py-5 gap-10  sm:flex-col max-h-[65vh]">
-         {/* <div className="grid grid-cols-1 gap-2"> Reduced gap */}
-         <div className="flex flex-col gap-5 border-l-2 border-[#135e4c82] w-1/3 overflow-y-auto sm:flex-row sm:overflow-x-scroll sm:w-full">
+         <div className="flex flex-col gap-5 border-l-2 border-[#135e4c82] w-1/3 overflow-y-auto sm:flex-row sm:overflow-x-scroll sm:w-full sm:h-fit">
          
           {experiences.map((experience, index) => (
             <div
@@ -26,10 +24,10 @@ function Experience1() {
               className="cursor-pointer"
             >
               <h1
-                className={`text-xl px-5
+                className={`text-xl px-5 sm:text-lg
                  ${
                    selectedItemIndex === index
-                     ? "text-black border-tertiary border-l-4  bg-slate-400 ml-3 py-3"
+                     ? "text-black border-tertiary border-l-4  bg-slate-400 ml-3 py-3 sm:py-1 sm:pt-2"
                      : "text-black"
                  } `}
               >
@@ -39,12 +37,12 @@ function Experience1() {
           ))}
         </div>
 
-        {/* <div className="max-h-[calc(70vh-120px)] flex flex-col justify-center gap-5 w-1/2 "> */}
-        <div className=" flex flex-col justify-center gap-3 w-1/2 ">
-          <h1 className="text-primary text-3xl font-semibold">
+        
+        <div className=" flex flex-col justify-center gap-3 w-1/2 sm:w-full ">
+          <h1 className="text-primary text-3xl font-semibold sm:text-xl">
             {experiences[selectedItemIndex].company}
           </h1>
-          <h1 className="text-tertiary text-xl">
+          <h1 className="text-tertiary text-xl sm:text-lg">
             {experiences[selectedItemIndex].period}
           </h1>
           <p className="text-black ">
