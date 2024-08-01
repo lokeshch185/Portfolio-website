@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import axios from "axios";
 import Loader from "./components/Loader";
@@ -20,7 +20,9 @@ import ORActivities from "./pages/Home/ORActivities";
 import Navbar from "./components/Navbar"; // Import the Navbar component
 import Footer from "./components/Footer";
 import Flagship from "./pages/Home/Flagship";
+
 import Fundedprojects from "./pages/Home/Fundedprojects"
+import Experience1 from "./pages/Home/Experience1";
 
 const App = () => {
   const dispatch = useDispatch();

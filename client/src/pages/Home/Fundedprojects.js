@@ -117,10 +117,9 @@ function Fundedprojects() {
 
     return (
         <>
-        <div className=" m-10 ">
-            <h1 className=" select-none flex hover:animate-pulse duration-150 py-4 mx-56 justify-center items-center rounded-xl bg-gradient-to-r
-             from-blue-300 via-blue-100 to-blue-300 shadow-xl shadow-gray-600 text-4xl font-semibold
-             md:justify-center md:items-center md:text-center text-left ">Funded Research Projects</h1>
+        <div className=" m-8 sm:m-4 ">
+            <h1 className=" select-none flex hover:animate-pulse duration-150 py-4 sm:py-2 sm:mx-4 lg:mx-56 justify-start lg:justify-center items-center rounded-xl bg-gradient-to-r
+             from-blue-300 via-blue-100 to-blue-300 shadow-xl shadow-gray-600 text-4xl sm:text-2xl font-semibold whitespace-nowrap">Funded Research Projects</h1>
             <Table
                 dataSource={fprojects}
                 columns={columns}

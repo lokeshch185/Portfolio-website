@@ -2,6 +2,7 @@
 import { useSelector } from "react-redux";
 import { Table, Typography } from 'antd';
 import moment from "moment";
+import './Styles.css';
 import Journals from "./Journals";
 import Patents from "./Patents";
 import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
@@ -79,8 +80,9 @@ function Conference() {
 
     return (
         <>
-        <div className="m-10">
-            <h1 className="flex justify-center items-center text-4xl text-primary py-5 font-semibold">Conference Papers</h1>
+        <div className="m-8 sm:m-4">
+            <h1 className="select-none flex hover:animate-pulse duration-150 py-4 sm:py-2 sm:mx-4 lg:mx-56 justify-start lg:justify-center items-center rounded-xl bg-gradient-to-r
+             from-blue-300 via-blue-100 to-blue-300 shadow-xl shadow-gray-600 text-4xl sm:text-2xl font-semibold whitespace-nowrap">Conference Papers</h1>
             <Table
 
                 dataSource={conferences}
@@ -88,7 +90,7 @@ function Conference() {
                 rowKey="_id"
                 size="small"
                 pagination={false}
-                className=""
+                className="animated-table"
                 bordered
                 scroll={{
                     x: 'max-content', // Enable horizontal scroll
@@ -97,10 +99,22 @@ function Conference() {
 
             />
             <style jsx>{`
-                .ant-table-thead > tr > th {
-                    background-color: #0A192F !important; /* Use primary color */
-                    color: white !important;
+               .ant-table-thead > tr > th {
+                font-family: 'Segoe UI', sans-serif;
+                font-weight: regular;
+                font-size: 16px;
+                border-radius: 6px 6px 0 0; /* Rounded Top Corners */
+                
+                border: 3px solid #D1D5DB; /* Light Grey */
+                background-color:#0D47A1  !important; /* Use primary color */
+                color: white !important;
+                
+
                 }
+            .ant-table-tbody > tr > td {
+                background-color:#ADD8E6; 
+
+              }
 
             `}</style>
 

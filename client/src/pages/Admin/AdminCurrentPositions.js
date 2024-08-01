@@ -133,7 +133,7 @@ function AdminCurrentPositions() {
                         onFinish={onFinish}
                         initialValues={{
                             ...selectedItemForEdit,
-                            date: selectedItemForEdit ? moment(selectedItemForEdit.date) : null
+                            tenure: selectedItemForEdit ? moment(selectedItemForEdit.tenure) : null
                         }}
                     >
                         <Form.Item name="position" label="Position">

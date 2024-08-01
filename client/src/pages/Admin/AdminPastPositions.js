@@ -137,9 +137,12 @@ function AdminPastPositions() {
             onFinish={onFinish}
             initialValues={{
               ...selectedItemForEdit,
-              date: selectedItemForEdit
-                ? moment(selectedItemForEdit.date)
+              tenurefrom: selectedItemForEdit
+                ? moment(selectedItemForEdit.tenurefrom)
                 : null,
+              tenureto: selectedItemForEdit
+              ? moment(selectedItemForEdit.tenureto)
+              : null,
             }}
           >
             <Form.Item name="position" label="Position">

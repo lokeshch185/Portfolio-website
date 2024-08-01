@@ -1,34 +1,30 @@
-import React, { useState } from "react";
+import { useRef } from "react";
 import { useSelector } from "react-redux";
 import SectionTitle from "../../components/SectionTitle";
 import moment from "moment";
+import { FaChevronDown } from 'react-icons/fa';
 
 function AddPosition() {
   const { portfolioData } = useSelector((state) => state.root);
   const { addpositions } = portfolioData;
 
-
   return (
-    <div className="container mx-auto px-4 py-4 bg-gray-50">
-      <SectionTitle text="bold" title="Additional Positions" />
-      <div>
-        {addpositions.map((addposition, index) => (
-          <div
-            key={index}
-            className="bg-gray-200 rounded-sm shadow-sm p-1 mb-2 sm:w-full lg:w-1/2 hover:scale-105"
-          >
-            <div className="">
-              <h1 className="text-md font-semibold">
-                {addposition.position}
-              </h1>
-              <div className="">
-                <p className="text-xs text-gray-600 f">
-                  {addposition.department}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
+    <div>
+      <div className="h-[vh-5] flex flex-col overflow-hidden scale-95">
+        <SectionTitle text="bold" className="fixed" title="Additional Positions" />
+        <div>
+          <ul className="list-disc ml-4">
+            {addpositions.map((addposition, index) => (
+              <li key={index} className="mb-4">
+                <div>
+                  <h1 className="text-lg font-medium">
+                    {addposition.position} of {addposition.department} from {moment(addposition.tenurefrom).format('YYYY-MM-DD')} to {moment(addposition.tenureto).format('YYYY-MM-DD')}
+                  </h1>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

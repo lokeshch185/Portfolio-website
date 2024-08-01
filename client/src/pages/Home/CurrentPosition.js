@@ -1,42 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import SectionTitle from "../../components/SectionTitle";
 import moment from "moment";
 
-function CurrentPosition() {
+function VisitingPosition() {
   const { portfolioData } = useSelector((state) => state.root);
   const { currentpositions } = portfolioData;
 
   return (
-    <div className=" m-auto px-4 py-4 bg-gray-50 ">
+    <div className="h-[vh-5] flex flex-col overflow-hidden mt-5 scale-95">
       <SectionTitle text="bold" title="Current Positions" />
-      <div className="flex flex-col justify-center">
+      <ul className="list-disc ml-5 space-y-2">
         {currentpositions.map((currentposition, index) => (
-          <div
-            key={index}
-            className="border-b-2 w-full lg:w-1/2 bg-slate-200 mb-2 p-1 rounded-sm"
-          >
-            <div className="pt-1">
-              <h1 className="text-md font-semibold">
-                {currentposition.position}
+          <li key={index} className="pb-4">
+            <div>
+              <h1 className="text-lg font-medium">
+                {currentposition.position} in {currentposition.department} <br />
+                Course: {moment(currentposition.tenure).format("YYYY-MM-DD")}
               </h1>
-             
-                <div className="p-0 gap-0">
-                  <p className="text-xs text-gray-600 font-semibold">
-                    Department: {currentposition.department}
-                  </p>
-                  <p className="text-xs text-gray-600 font-semibold">
-                    Working from:{" "}
-                    {moment(currentposition.tenure).format("YYYY-MM-DD")}
-                  </p>
-                </div>
-       
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
 
-export default CurrentPosition;
+export default VisitingPosition;
