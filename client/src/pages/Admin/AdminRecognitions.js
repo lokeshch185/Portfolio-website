@@ -79,10 +79,9 @@ function AdminRecognitions() {
             <div className="grid grid-cols-4 gap-5 mt-5 sm:grid-cols-1">
                 {recognitions.map((recognition) => (
                      <div key={recognition._id} className="shadow border p-5 border-gray-400 flex flex-col">
-                        <h1 className="text-primary text-xl font-bold">
+                        <h1 className="text-primary text-lg font-bold">
                             {recognition.title}
                         </h1>
-                        <h1>From: {moment(recognition.date).format('YYYY-MM-DD')}</h1>
                         <div className="flex justify-end gap-5 mt-5">
                             <button
                                 className="bg-red-500 text-white px-5 py-2 "
@@ -129,9 +128,7 @@ function AdminRecognitions() {
                         <Form.Item name="title" label="Title">
                             <input placeholder="Title" />
                         </Form.Item>
-                        <Form.Item name="date" label="Date">
-                            <DatePicker />
-                        </Form.Item>
+                        
 
                         <div className="flex justify-end">
                             <button

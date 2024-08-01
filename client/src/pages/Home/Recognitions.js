@@ -14,8 +14,8 @@ function Recognitions() {
       <div className="space-y-4">
         <ul>
           {recognitions.map((recognition, index) => (
-            <li key={index} className="font-semibold mb-1 py-1" style={{ fontSize: '17px' }}>
-             • Recognized as {recognition.title} with effect from {moment(recognition.date).format('YYYY-MM-DD')}
+            <li key={index} className="text-lg font-medium mb-1 py-1" style={{ fontSize: '17px' }}>
+             • {recognition.title} 
             </li>
           ))}
         </ul>

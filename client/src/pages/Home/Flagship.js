@@ -13,7 +13,7 @@ function Flagship() {
         <div classname = "container m-10 px-5">
             <SectionTitle text = "bold" title="Flagship Events" />
 
-            <div className="flex items-center sm:flex-col">
+            <div className="flex items-center px-2 sm:flex-col">
                 <ul>
                     {flagships.map((flagship, index) => (
                         <li key={index} className ="">

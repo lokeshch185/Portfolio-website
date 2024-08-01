@@ -47,13 +47,6 @@ function AdminAbout() {
           <textarea placeholder="Description1" />
         </Form.Item>
 
-        <Form.Item name="description2" label="Description2">
-          <textarea placeholder="Description2" />
-        </Form.Item>
-
-        <Form.Item name="skills" label="Skills">
-          <textarea placeholder="Skills" />
-        </Form.Item>
         <div className="flex justify-end w-full" label="Welcome Text">
           <button className="px-10 py-2 bg-primary text-white" type="submit">
             SAVE

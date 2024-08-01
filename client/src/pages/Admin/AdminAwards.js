@@ -79,15 +79,8 @@ function AdminAwards() {
             <div className="grid grid-cols-4 gap-5 mt-5 sm:grid-cols-1">
                 {awards.map((award) => (
                      <div key={award._id} className="shadow border p-5 border-gray-400 flex flex-col">
-                        <h1 className="text-primary text-xl font-bold">
-                            {award.title}
-                        </h1>
-                        <hr />
-                        <h1>organisation: {award.organisation}</h1>
-                        <img src={award.photo} alt={award.title} />
-                        <h1>{award.remark}</h1>
-                        <h1>{moment(award.date).format('YYYY-MM-DD')}</h1>
-                        <div className="flex justify-end gap-5 mt-5">
+                       <h1>{award.title}</h1>
+                         <div className="flex justify-end gap-5 mt-5">
                             <button
                                 className="bg-red-500 text-white px-5 py-2 "
                                 onClick={() => {
@@ -133,7 +126,7 @@ function AdminAwards() {
                         <Form.Item name="title" label="Title">
                             <input placeholder="Title" />
                         </Form.Item>
-                        <Form.Item name="organisation" label="Organisation">
+                        {/* <Form.Item name="organisation" label="Organisation">
                             <input placeholder="Organisation" />
                         </Form.Item>
                         <Form.Item name="photo" label="Photo">
@@ -144,7 +137,7 @@ function AdminAwards() {
                         </Form.Item>
                         <Form.Item name="date" label="Date">
                             <DatePicker />
-                        </Form.Item>
+                        </Form.Item> */}
 
                         <div className="flex justify-end">
                             <button

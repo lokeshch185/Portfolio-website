@@ -10,9 +10,9 @@ function VisitingPosition() {
   return (
     <div className="h-[vh-5] flex flex-col overflow-hidden mt-5 scale-95">
       <SectionTitle text="bold" title="Current Positions" />
-      <ul className="list-disc ml-5 space-y-2">
+      <ul className="list-disc ml-5 ">
         {currentpositions.map((currentposition, index) => (
-          <li key={index} className="pb-4">
+          <li key={index} className="pb-1">
             <div>
               <h1 className="text-lg font-medium">
                 {currentposition.position} in {currentposition.department} <br />

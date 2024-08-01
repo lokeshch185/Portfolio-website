@@ -14,13 +14,9 @@ function Awards() {
 
       <div className="flex flex-col gap-2 py-5">
         {awards.map((award, index) => (
-          <div key={index} className="flex flex-col sm:flex-row sm:items-center sm:gap-4 pl-4">
-            <h1 className="text-lg font-semibold text-black"> • {award.title}</h1>
-            <div className="flex flex-col sm:flex-row sm:gap-4">
-              <h1 className="text-primary text-xs">Date: {moment(award.date).format('YYYY-MM-DD')}</h1>
-              <h1 className="text-primary text-xs">Organisation: {award.organisation}</h1>
-              <h1 className="text-secondary text-xs">{award.remark}</h1>
-            </div>
+          <div key={index} className="flex flex-col sm:flex-row sm:items-center  pl-4">
+            <p className="text-lg font-medium text-black"> • {award.title}</p>
+           
           </div>
         ))}
       </div>

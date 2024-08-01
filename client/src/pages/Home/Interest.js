@@ -15,7 +15,7 @@ function Interest() {
       <div className="space-y-4">
         <ul>
           {interests.map((interest, index) => (
-            <li key={index} className="text-lg font-semibold mb-1">
+            <li key={index} className="text-lg font-medium mb-1">
               {interest.title}
             </li>
           ))}

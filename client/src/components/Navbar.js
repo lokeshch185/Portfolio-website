@@ -26,7 +26,7 @@ const NavBar = (props) => {
           <Row>
             <Col xl={12} lg={12} md={12} sm={20} xs={20}>
               <Title id='title-button' level={4}>
-                <a onClick={() => gotoPage('/')}>Kiran Talele</a>
+                <a onClick={() => gotoPage('/')}>Prof. K.T.V Talele</a>
               </Title>
             </Col>
             <Col xl={12} lg={12} md={12} sm={4} xs={4}>
