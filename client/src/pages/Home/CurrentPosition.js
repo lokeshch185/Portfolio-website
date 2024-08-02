@@ -14,9 +14,9 @@ function VisitingPosition() {
         {currentpositions.map((currentposition, index) => (
           <li key={index} className="pb-1">
             <div>
-              <h1 className="text-lg font-medium">
+              <h1 className="text-lg lg: w-1/2 font-medium">
                 {currentposition.position} in {currentposition.department} <br />
-                Course: {moment(currentposition.tenure).format("YYYY-MM-DD")}
+                {/* Course: {moment(currentposition.tenure).format("YYYY-MM-DD")} */}
               </h1>
             </div>
           </li>

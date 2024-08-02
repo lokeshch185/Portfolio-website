@@ -17,8 +17,9 @@ function AddPosition() {
             {addpositions.map((addposition, index) => (
               <li key={index} className="mb-4">
                 <div>
-                  <h1 className="text-lg font-medium">
-                    {addposition.position} of {addposition.department} from {moment(addposition.tenurefrom).format('YYYY-MM-DD')} to {moment(addposition.tenureto).format('YYYY-MM-DD')}
+                  <h1 className="text-lg lg: w-1/2 font-medium">
+                    {addposition.position} of {addposition.department}
+                     {/* from {moment(addposition.tenurefrom).format('YYYY-MM-DD')} to {moment(addposition.tenureto).format('YYYY-MM-DD')} */}
                   </h1>
                 </div>
               </li>

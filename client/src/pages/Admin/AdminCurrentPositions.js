@@ -19,16 +19,16 @@ function AdminCurrentPositions() {
             dispatch(ShowLoading());
             
             let response;
-            const payload = { ...values, tenure: values.tenure.format('YYYY-MM-DD') };
+            //const payload = { ...values, tenure: values.tenure.format('YYYY-MM-DD') };
             // const payload = { ...values, tenurefrom: values.tenurefrom.format('YYYY-MM-DD'), tenureto: values.tenureto.format('YYYY-MM-DD') };
 
             if (selectedItemForEdit) {
                 response = await axios.post("/api/portfolio/update-currentposition", {
-                    ...payload,
+                 
                     _id: selectedItemForEdit._id,
                 });
             } else {
-                response = await axios.post("/api/portfolio/add-currentposition", payload);
+                response = await axios.post("/api/portfolio/add-currentposition");
             }
 
             dispatch(HideLoading());
@@ -88,7 +88,7 @@ function AdminCurrentPositions() {
                         </h1>
                         <hr />
                         <h1>Department : {currentposition.department}</h1>
-                        <h1>{moment(currentposition.tenure).format('YYYY-MM-DD')}</h1>
+                       {/* <h1>{moment(currentposition.tenure).format('YYYY-MM-DD')}</h1> */}
 
                         {/* <h1>From : {moment(currentposition.tenurefrom).format('YYYY-MM-DD')}</h1>
                         <h1>To : {moment(currentposition.tenureto).format('YYYY-MM-DD')}</h1> */}
@@ -142,9 +142,9 @@ function AdminCurrentPositions() {
                         <Form.Item name="department" label="Department">
                             <input placeholder="Department" />
                         </Form.Item>
-                        <Form.Item name="tenure" label="Tenure">
-                            <DatePicker />
-                        </Form.Item>
+                       {/* <Form.Item name="tenure" label="Tenure">
+                           <DatePicker />
+                    </Form.Item> */}
 
                         <div className="flex justify-end">
                             <button

@@ -7,10 +7,10 @@ function Events() {
     const { events } = portfolioData;
 
     return (
-        <div>
-            <SectionTitle title="Events" />
+        <div classname = "container m-10 px-5">
+            <SectionTitle text = "bold" title="Events" />
 
-            <div className="flex w-full items-center px-2 sm:flex-col">
+            <div className="flex w-full items-center sm:flex-col">
                 <ul>
                     {events.map((event, index) => (
                         <li key={index} className="mb-2">

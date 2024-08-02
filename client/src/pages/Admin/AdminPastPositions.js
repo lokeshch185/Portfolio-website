@@ -18,8 +18,11 @@ function AdminPastPositions() {
       dispatch(ShowLoading());
 
       let response;
-      
-      const payload = { ...values, tenureto: values.tenureto.format("YYYY-MM-DD"), tenureto: values.tenureto.format("YYYY-MM-DD") };
+
+      const payload = {
+        ...values,
+        // tenureto: values.tenureto.format("YYYY-MM-DD"), tenureto: values.tenureto.format("YYYY-MM-DD") 
+      };
 
       if (selectedItemForEdit) {
         response = await axios.post("/api/portfolio/update-pastposition", {
@@ -91,9 +94,9 @@ function AdminPastPositions() {
             <hr />
             <h1>Department : {pastposition.department}</h1>
             <h1>
-              From : {moment(pastposition.tenurefrom).format("YYYY-MM-DD")}
+              From : {pastposition.tenurefrom}
             </h1>
-            <h1>To : {moment(pastposition.tenureto).format("YYYY-MM-DD")}</h1>
+            <h1>To : {pastposition.tenureto}</h1>
             <br></br>
 
             <div className="flex justify-end gap-5 mt-5">
@@ -137,12 +140,12 @@ function AdminPastPositions() {
             onFinish={onFinish}
             initialValues={{
               ...selectedItemForEdit,
-              tenurefrom: selectedItemForEdit
-                ? moment(selectedItemForEdit.tenurefrom)
-                : null,
-              tenureto: selectedItemForEdit
-              ? moment(selectedItemForEdit.tenureto)
-              : null,
+              // tenurefrom: selectedItemForEdit
+              //   ? moment(selectedItemForEdit.tenurefrom)
+              //   : null,
+              // tenureto: selectedItemForEdit
+              // ? moment(selectedItemForEdit.tenureto)
+              // : null,
             }}
           >
             <Form.Item name="position" label="Position">
@@ -153,10 +156,10 @@ function AdminPastPositions() {
             </Form.Item>
 
             <Form.Item name="tenurefrom" label="Date">
-              <DatePicker />
+              <input placeholder="from" />
             </Form.Item>
             <Form.Item name="tenureto" label="Date">
-              <DatePicker />
+              <input placeholder="to" />
             </Form.Item>
 
             <div className="flex justify-end">

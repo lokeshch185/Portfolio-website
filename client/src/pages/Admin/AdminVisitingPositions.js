@@ -101,7 +101,7 @@ function AdminVisitingPositions() {
                 Delete
               </button>
               <button
-                className="bg-slate-200 px-5 py-2 text-black"
+                className="bg-primary px-5 py-2 text-white"
                 onClick={() => {
                   setSelectedItemForEdit(visitingposition);
                   setShowAddEditModal(true);

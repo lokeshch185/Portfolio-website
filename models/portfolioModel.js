@@ -306,10 +306,10 @@ const currentPositionSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  tenure: {
-    type: Date,
-    required: true,
-  },
+  // tenure: {
+  //   type: Date,
+  //   required: true,
+  // },
   
 });
 
@@ -347,11 +347,11 @@ const pastpositionSchema = new mongoose.Schema({
     required: true,
   },
   tenurefrom: {
-    type: Date,
+    type: String,
     required: true,
   },
   tenureto: {
-    type: Date,
+    type: String,
     required: true,
   },
 });

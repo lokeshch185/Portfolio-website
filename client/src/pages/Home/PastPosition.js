@@ -18,7 +18,7 @@ function PastPosition() {
               <li key={index} className="mb-4">
                 <div>
                   <h1 className="text-lg font-medium">
-                    {pastposition.position} of {pastposition.department} from {moment(pastposition.tenurefrom).format('YYYY-MM-DD')} to {moment(pastposition.tenureto).format('YYYY-MM-DD')}
+                    {pastposition.position} of {pastposition.department} from {pastposition.tenurefrom} to {pastposition.tenureto}
                   </h1>
                 </div>
               </li>
