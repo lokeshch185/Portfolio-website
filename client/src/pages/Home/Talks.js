@@ -1,6 +1,7 @@
 
 import { useSelector } from "react-redux";
 import { Space, Table, Typography } from 'antd';
+import Loader from "../../components/Loader";
 import moment from "moment";
 import "../../index.css"
 
@@ -9,13 +10,12 @@ const {Title, Text} = Typography;
 
 function Talks() {
 
-    const { portfolioData } = useSelector((state) => state.root);
-
-    // Safely access awards with optional chaining and provide a default empty array
+    const { loading, portfolioData } = useSelector((state) => state.root);
     const talks = portfolioData?.talks || [];
 
-    console.log(portfolioData);
-
+  if (loading) {
+    return <div><Loader /></div>; // Show a loading state while data is being fetched
+  }
     // Define table columns
     const columns = [
         {

@@ -7,8 +7,10 @@ function VisitingPosition() {
   const { visitingpositions } = portfolioData;
 
   return (
-    <div className="container mx-auto px-4 py-4 bg-gray-50">
-      <SectionTitle text="bold" title="Visiting Faculty at:" />
+    <div>
+    {/* <div className="container mx-auto px-4 py-4 bg-gray-50"> */}
+    <div className="h-[vh-5] flex flex-col overflow-hidden scale-95">
+      <SectionTitle text="bold" className="fixed" title="Visiting Faculty at:" />
       <ul className="list-disc ml-5">
         {visitingpositions.map((visitingposition, index) => (
           <li key={index} className="pb-2">
@@ -21,6 +23,7 @@ function VisitingPosition() {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 }

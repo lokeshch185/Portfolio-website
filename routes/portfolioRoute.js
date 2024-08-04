@@ -26,6 +26,7 @@ const {
   Events,
   FDP,
   WorkShops,
+  Report,
 } = require("../models/portfolioModel");
 const User = require("../models/userModel");
 // get all portfolio data
@@ -58,6 +59,7 @@ router.get("/get-portfolio-data", async (req, res) => {
     const events = await Events.find();
     const fdps = await FDP.find();
     const workshops = await WorkShops.find();
+    const reports = await Report.find();
 
  
 
@@ -89,6 +91,7 @@ router.get("/get-portfolio-data", async (req, res) => {
       events : events,
       fdps: fdps,
       workshops: workshops,
+      reports:reports,
 
 
 
@@ -1241,6 +1244,52 @@ router.post("/delete-mentored", async (req, res) => {
       data: mentored,
       success: true,
       message: "Mentored deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+router.post("/add-report", async (req, res) => {
+  try {
+    const report = new Report(req.body);
+    await report.save();
+    res.status(200).send({
+      data: report,
+      success: true,
+      message: "report added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update report
+router.post("/update-report", async (req, res) => {
+  try {
+    const report = await Report.findOneAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res.status(200).send({
+      data: report,
+      success: true,
+      message: "report updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// delete report
+router.post("/delete-report", async (req, res) => {
+  try {
+    const report = await Report.findOneAndDelete({ _id: req.body._id });
+    res.status(200).send({
+      data: report,
+      success: true,
+      message: "report deleted successfully",
     });
   } catch (error) {
     res.status(500).send(error);

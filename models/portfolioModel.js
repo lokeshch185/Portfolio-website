@@ -518,6 +518,7 @@ const fdpSchema = new mongoose.Schema({
   },
 
 });
+
 const workshopsSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -536,6 +537,18 @@ const workshopsSchema = new mongoose.Schema({
     required: false,
   },
 
+  
+});
+
+const reportSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: false,
+  },
+  link: {
+    type: String,
+    required: false,
+  }
   
 });
 
@@ -568,4 +581,5 @@ module.exports = {
   Events: mongoose.model("events", eventsSchema),
   FDP:  mongoose.model("fdp", fdpSchema),
   WorkShops: mongoose.model("workshops", workshopsSchema),
+  Report: mongoose.model("reports", reportSchema),
 };

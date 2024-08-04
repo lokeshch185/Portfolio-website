@@ -31,6 +31,7 @@ function UGProject() {
             key: 'title',
             align: 'center',
             fixed: 'left',
+            width : 10,
         },
         {
             title: 'Student Group',
@@ -89,17 +90,21 @@ function UGProject() {
     return (
         <>
             <div className="m-8 sm:m-4">
-            <h1 className="select-none flex hover:animate-pulse duration-150 py-4 sm:py-2 sm:mx-4 lg:mx-56 sm:justify-start lg:justify-center items-center rounded-xl bg-gradient-to-r
+            <h1 className="select-none flex hover:animate-pulse duration-150 py-4 sm:py-2 sm:mx-4 lg:mx-56 justify-start lg:justify-center items-center rounded-xl bg-gradient-to-r
              from-blue-300 via-blue-100 to-blue-300 shadow-xl shadow-gray-600 text-4xl sm:text-2xl font-semibold whitespace-nowrap">Undergraduate Projects</h1>
             <Table
                 
                 dataSource={ugprojects}
                 columns={columns}
-                size="md"
+                size="small"
                 rowKey="_id"
                 pagination={false}
                 className="animated-table"
                 bordered
+                scroll={{
+                    x:  'max-content', // Enable horizontal scroll
+                    // Enable vertical scroll with a height limit
+                }}
 
             />
             <style jsx>{`

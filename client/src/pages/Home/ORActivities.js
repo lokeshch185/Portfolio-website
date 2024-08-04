@@ -8,17 +8,18 @@ import Flagship from "./Flagship";
 import Events from "./Events";
 import Workshops from "./Workshops";
 import FDP from "./FDP";
+import Loader from "../../components/Loader";
 
 const { Title, Text } = Typography;
 
 function ORActivities() {
 
-    const { portfolioData } = useSelector((state) => state.root);
-
-    // Safely access awards with optional chaining and provide a default empty array
+    const { loading, portfolioData } = useSelector((state) => state.root);
     const oractivities = portfolioData?.oractivities || [];
 
-    console.log(portfolioData);
+    if (loading) {
+    return <div><Loader /></div>; // Show a loading state while data is being fetched
+    }
     
     // Define table columns
     const columns = [

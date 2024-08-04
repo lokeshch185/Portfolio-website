@@ -6,22 +6,23 @@ function Experience1() {
   const { experiences } = portfolioData;
 
   return (
-    <div className=" container mx-auto px-4 py-4">
-      <SectionTitle title="Teaching Experience" />
+    <div>
+    <div className="h-[vh-5] flex flex-col overflow-hidden scale-95">
+      <SectionTitle text="bold" className="fixed" title="Teaching Experience" />
 
-      <div className="flex flex-col gap-2 py-5">
+      <ul className="list-disc ml-5">
         {experiences.map((experience, index) => (
-          <div 
-            key={index} 
-            className="flex flex-col px-2 sm:flex-row sm:items-start sm:gap-6 sm:p-6"
-          >
-            {/* Experience Title */}
-            <h1 className="text-lg sm:text-md font-medium w-full sm:w-auto sm:mr-4">
-            • {experience.title} at  {experience.company} from  {experience.period}
-            </h1>
+          <li key={index} className="pb-2">
+            <div>
+              <h1 className="text-lg font-medium">
+                {experience.title} at  {experience.company} from  {experience.period} 
+              </h1>
             </div>
+          </li>
         ))}
-      </div>
+      </ul>
+
+    </div>
     </div>
   );
 }

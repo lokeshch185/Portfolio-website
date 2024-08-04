@@ -19,10 +19,10 @@ import Conference from "./pages/Home/Conference";
 import ORActivities from "./pages/Home/ORActivities";
 import Navbar from "./components/Navbar"; // Import the Navbar component
 import Footer from "./components/Footer";
+import Reports from "./pages/Home/Reports";
 import Flagship from "./pages/Home/Flagship";
 
 import Fundedprojects from "./pages/Home/Fundedprojects"
-import Experience1 from "./pages/Home/Experience1";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -80,7 +80,7 @@ const RoutesWithNavbarAndFooter = ({ loading }) => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/conference" element={<Conference />} />
         <Route path="/oractivities" element={<ORActivities />} />
-        
+        <Route path="/reports" element={<Reports />} />
         <Route path="/events" element={<Flagship />} />
         
         

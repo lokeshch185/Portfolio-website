@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import AdminIntro from "./AdminIntro";
 import AdminAbout from "./AdminAbout";
 import Experiences from "./AdminExperiences";
-import AdminCourses from "./AdminCourses";
 import AdminContact from "./AdminContact";
 import AdminAwards from "./AdminAwards";
 import AdminUGProjects from "./AdminUGProjects";
@@ -26,6 +25,7 @@ import AdminEvents from "./AdminEvents";
 import AdminFlagship from "./AdminFlagship";
 import AdminFDP from "./AdminFDP";
 import AdminWorkshops from "./AdminWorkshops";
+import AdminReports from "./AdminReports";
 
 const { TabPane } = Tabs;
 
@@ -129,6 +129,9 @@ function Admin() {
             </TabPane>
             <TabPane tab="Workshop" key="26">
               <AdminWorkshops />
+            </TabPane>
+            <TabPane tab="Reports" key="27">
+              <AdminReports />
             </TabPane>
           </Tabs>
         </div>

@@ -13,7 +13,7 @@ function PastPosition() {
       <div className="h-[vh-5] flex flex-col overflow-hidden scale-95">
         <SectionTitle text="bold" className="fixed" title="Past Positions" />
         <div>
-          <ul className="list-disc ml-4">
+          <ul className="list-disc ml-5">
             {pastpositions.map((pastposition, index) => (
               <li key={index} className="mb-4">
                 <div>

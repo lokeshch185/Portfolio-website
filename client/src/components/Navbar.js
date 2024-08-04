@@ -57,6 +57,9 @@ const NavBar = (props) => {
                 <Menu.Item key="events" onClick={() => gotoPage("/events")}>
                   Events
                 </Menu.Item>
+                <Menu.Item key="reports" onClick={() => gotoPage("/reports")}>
+                  Reports
+                </Menu.Item>
               
                 {/* <Menu.Item key="journals" onClick={() => gotoPage("/journals")}>
                   Journals

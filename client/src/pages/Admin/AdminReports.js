@@ -4,10 +4,11 @@ import { Modal, Form, message, DatePicker } from "antd";
 import { HideLoading, ReloadData, ShowLoading } from "../../redux/rootSlice";
 import axios from "axios";
 import moment from "moment";
-function AdminAwards() {
+
+function AdminReports() {
     const dispatch = useDispatch();
     const { portfolioData } = useSelector((state) => state.root);
-    const { awards } = portfolioData;
+    const { reports } = portfolioData;
     const [showAddEditModal, setShowAddEditModal] = React.useState(false);
     const [selectedItemForEdit, setSelectedItemForEdit] = React.useState(null);
     const [type, setType] = React.useState("add");
@@ -16,15 +17,13 @@ function AdminAwards() {
         try {
             dispatch(ShowLoading());
             let response;
-            const payload = { ...values, };
-
             if (selectedItemForEdit) {
-                response = await axios.post("/api/portfolio/update-award", {
-                    ...payload,
-                    _id: selectedItemForEdit._id,
-                });
+              response = await axios.post("/api/portfolio/update-report", {
+                ...values,
+                _id: selectedItemForEdit._id,
+              });
             } else {
-                response = await axios.post("/api/portfolio/add-award", payload);
+              response = await axios.post("/api/portfolio/add-report", values);
             }
 
             dispatch(HideLoading());
@@ -46,7 +45,7 @@ function AdminAwards() {
     const onDelete = async (item) => {
         try {
             dispatch(ShowLoading());
-            const response = await axios.post("/api/portfolio/delete-award", {
+            const response = await axios.post("/api/portfolio/delete-report", {
                 _id: item._id,
             });
             dispatch(HideLoading());
@@ -73,18 +72,26 @@ function AdminAwards() {
                         setShowAddEditModal(true);
                     }}
                 >
-                    Add award
+                    Add Report
                 </button>
             </div>
             <div className="grid grid-cols-4 gap-5 mt-5 sm:grid-cols-1">
-                {awards.map((award) => (
-                     <div key={award._id} className="shadow border p-5 border-gray-400 flex flex-col">
-                       <h1>{award.title}</h1>
-                         <div className="flex justify-end gap-5 mt-5">
+                {reports.map((report) => (
+                    <div key={report._id} className="shadow border p-5 border-gray-400 flex flex-col">
+                        
+                        <h1 className="text-primary text-xl font-bold">
+                             {report.title}
+                        </h1>
+                        <hr />
+                        <h1>Link : {report.link}</h1>
+                        
+                        
+
+                        <div className="flex justify-end gap-5 mt-5">
                             <button
                                 className="bg-red-500 text-white px-5 py-2 "
                                 onClick={() => {
-                                    onDelete(award);
+                                    onDelete(report);
                                 }}
                             >
                                 Delete
@@ -92,7 +99,7 @@ function AdminAwards() {
                             <button
                                 className="bg-primary text-white px-5 py-2"
                                 onClick={() => {
-                                    setSelectedItemForEdit(award);
+                                    setSelectedItemForEdit(report);
                                     setShowAddEditModal(true);
                                     setType("edit");
                                 }}
@@ -107,7 +114,7 @@ function AdminAwards() {
             {(type === "add" || selectedItemForEdit) && (
                 <Modal
                     visible={showAddEditModal}
-                    title={selectedItemForEdit ? "Edit Award" : "Add Award"}
+                    title={selectedItemForEdit ? "Edit Report" : "Add Report"}
                     footer={null}
                     onCancel={() => {
                         setShowAddEditModal(false);
@@ -119,25 +126,17 @@ function AdminAwards() {
                         onFinish={onFinish}
                         initialValues={{
                             ...selectedItemForEdit,
-                          
                         }}
-                        
                     >
-                        <Form.Item name="title" label="Title">
+                        <Form.Item name="title" label="title">
                             <input placeholder="Title" />
                         </Form.Item>
-                        {/* <Form.Item name="organisation" label="Organisation">
-                            <input placeholder="Organisation" />
+                        <Form.Item name="link" label="link">
+                            <input placeholder="Link" />
                         </Form.Item>
-                        <Form.Item name="photo" label="Photo">
-                            <input placeholder="Photo" />
-                        </Form.Item>
-                        <Form.Item name="remark" label="Remark">
-                            <input placeholder="Remark" />
-                        </Form.Item>
-                        <Form.Item name="date" label="Date">
-                            <DatePicker />
-                        </Form.Item> */}
+                        
+                        
+                        
 
                         <div className="flex justify-end">
                             <button
@@ -160,4 +159,4 @@ function AdminAwards() {
     );
 }
 
-export default AdminAwards;
+export default AdminReports;

@@ -3,14 +3,15 @@ import { useSelector } from "react-redux";
 import SectionTitle from "../../components/SectionTitle";
 import { convertLegacyProps } from "antd/lib/button/button";
 import moment from "moment";
+import Loader from "../../components/Loader";
 
 function FDP() {
   const { loading, portfolioData } = useSelector((state) => state.root);
-  const { fdps } = portfolioData;
-  console.log(fdps);
-  // console.log(interests);
-  // console.log(portfolioData);
-  // const { skills, lottieURL, description1, description2 } = interests;
+  const fdps = portfolioData?.fdps || [];
+
+if (loading) {
+  return <div><Loader /></div>; // Show a loading state while data is being fetched
+}
   return (
     
       <div className="m-10">
@@ -33,10 +34,7 @@ function FDP() {
           ))}
         </ul>
 
-        {/* <div className="flex flex-col gap-5 w-1/2 sm:w-full">
-          <p className="text-white">{description1 || ""}</p>
-          <p className="text-white">{description2 || ""}</p> */}
-        {/* </div> */}
+
       </div>
 
 

@@ -9,17 +9,23 @@ function Awards() {
   const { awards } = portfolioData;
 
   return (
-    <div className="bg-slate-50 mx-auto px-3 pt-5">
-      <SectionTitle title="Awards" />
+    <div>
+    <div className="h-[vh-5] flex flex-col overflow-hidden scale-95">
+      <SectionTitle  text="bold" className="fixed" title="Awards" />
 
-      <div className="flex flex-col gap-2 py-5">
+      <ul className="list-disc ml-5">
         {awards.map((award, index) => (
-          <div key={index} className="flex flex-col sm:flex-row sm:items-center  pl-4">
-            <p className="text-lg font-medium text-black"> • {award.title}</p>
-           
-          </div>
+          <li key={index} className="pb-2">
+            <div>
+              <h1 className="text-lg font-medium">
+              {award.title}
+              </h1>
+            </div>
+          </li>
         ))}
-      </div>
+      </ul>
+
+    </div>
     </div>
   );
 }
