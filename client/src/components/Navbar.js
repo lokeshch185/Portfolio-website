@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col, Typography, Layout, Menu } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import './Navbar.css'
 
 
@@ -10,6 +10,35 @@ const { Title } = Typography;
 
 const NavBar = (props) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [selectedKey, setSelectedKey] = useState("");
+
+  useEffect(() => {
+    // Determine the current route and set the appropriate key
+    const path = location.pathname;
+    switch (path) {
+      case "/":
+        setSelectedKey("home");
+        break;
+      case "/projects":
+        setSelectedKey("projects");
+        break;
+      case "/conference":
+        setSelectedKey("conference");
+        break;
+      case "/oractivities":
+        setSelectedKey("oractivities");
+        break;
+      case "/events":
+        setSelectedKey("events");
+        break;
+      case "/reports":
+        setSelectedKey("reports");
+        break;
+      default:
+        setSelectedKey("home");
+    }
+  }, [location]);
 
   const gotoPage = (page) => {
     navigate(page);
@@ -33,7 +62,7 @@ const NavBar = (props) => {
               <Menu
                 theme='dark'
                 mode='horizontal'
-                defaultSelectedKeys={["home"]}
+                selectedKeys={[selectedKey]}
                 overflowedIndicator={<MenuOutlined />}
               >
                 <Menu.Item key="home" onClick={() => gotoPage("/")}>
