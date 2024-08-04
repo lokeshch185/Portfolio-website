@@ -139,6 +139,24 @@ const fprojectsSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  fundingagencyname: {
+    type: String,
+    required: false,
+  },
+  amtfunded: {
+    type: String,
+    required: false,
+  },
+  tenurefrom: {
+    type: Date,
+    required: false,
+  },
+  tenureto: {
+    type: Date,
+    required: false,
+  },
+
+//mostly nai chahiye
   studentgrp: {
     type: String,
     required: false,
@@ -148,14 +166,6 @@ const fprojectsSchema = new mongoose.Schema({
     required: false,
   },
   photo: {
-    type: String,
-    required: false,
-  },
-  fundingagencyname: {
-    type: String,
-    required: false,
-  },
-  amtfunded: {
     type: String,
     required: false,
   },

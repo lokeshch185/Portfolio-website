@@ -25,8 +25,8 @@ function Fundedprojects() {
     const columns = [
         {
             title: 'From',
-            dataIndex: 'date',
-            key: 'date',
+            dataIndex: 'tenurefrom',
+            key: 'tenurefrom',
             responsive: ['md'],
             align: 'center',
             fixed: 'left',
@@ -37,8 +37,8 @@ function Fundedprojects() {
         },
         {
             title: 'To',
-            dataIndex: 'date',
-            key: 'date',
+            dataIndex: 'tenureto',
+            key: 'tenureto',
             responsive: ['md'],
             align: 'center',
             fixed: 'left',
@@ -54,7 +54,7 @@ function Fundedprojects() {
             key: 'title',
             align: 'center',
             fixed: 'left',
-            width: 150,
+            width: 350,
 
         },
         // {
@@ -78,6 +78,7 @@ function Fundedprojects() {
             dataIndex: 'fundingagencyname',
             key: 'fundingagencyname',
             align: 'center',
+            width: 400
 
         },
         {
@@ -87,14 +88,14 @@ function Fundedprojects() {
             align: 'center',
 
         },
-        {
-            title: 'Remark',
-            dataIndex: 'remark',
-            key: 'remark',
-            align: 'center',
-            width:550,
+        // {
+        //     title: 'Remark',
+        //     dataIndex: 'remark',
+        //     key: 'remark',
+        //     align: 'center',
+        //     width:550,
 
-        },
+        // },
         // {
         //     title: 'Photo',
         //     dataIndex: 'photo',

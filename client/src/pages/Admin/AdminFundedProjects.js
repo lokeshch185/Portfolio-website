@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Modal, Form, message } from "antd";
+import { Modal, Form, message, DatePicker } from "antd";
 import { HideLoading, ReloadData, ShowLoading } from "../../redux/rootSlice";
 import axios from "axios";
+import moment from "moment";
 
-function AdminfProject() {
+function AdminFundedProjects() {
   const dispatch = useDispatch();
   const { portfolioData } = useSelector((state) => state.root);
   const { fprojects } = portfolioData;
@@ -15,15 +16,21 @@ function AdminfProject() {
   const onFinish = async (values) => {
     try {
       dispatch(ShowLoading());
+
       let response;
+
+      const payload = {
+        ...values,
+        tenureto: values.tenurefrom.format("YYYY-MM-DD"), tenureto: values.tenureto.format("YYYY-MM-DD") 
+      };
+
       if (selectedItemForEdit) {
         response = await axios.post("/api/portfolio/update-fprojects", {
-          ...values,
+          ...payload,
           _id: selectedItemForEdit._id,
         });
       } else {
-        response = await axios.post("/api/portfolio/add-fprojects", values);
-        console.log(values);
+        response = await axios.post("/api/portfolio/add-fprojects", payload);
       }
 
       dispatch(HideLoading());
@@ -68,7 +75,7 @@ function AdminfProject() {
         <button
           className="bg-primary px-5 py-2 text-white"
           onClick={() => {
-           
+            setSelectedItemForEdit(null);
             setShowAddEditModal(true);
           }}
         >
@@ -82,11 +89,13 @@ function AdminfProject() {
               {fproject.title}
             </h1>
             <hr />
-            <h1>Group : {fproject.studentgrp}</h1>
-            <h1>Link : {fproject.absvideolink}</h1>
+            {/* <h1>Group : {fproject.studentgrp}</h1>
+            <h1>Link : {fproject.absvideolink}</h1> */}
             <h1>Amount : {fproject.amtfunded}</h1>
             <h1>Funding agency name : {fproject.fundingagencyname}</h1>
-            <h1>{fproject.remark}</h1>
+            <h1>From : {moment(fproject.tenurefrom).format('YYYY-MM-DD')}</h1> 
+            <h1>To : {moment(fproject.tenureto).format('YYYY-MM-DD')}</h1>
+            {/* <h1>{fproject.remark}</h1> */}
             <div className="flex justify-end gap-5 mt-5">
               <button
                 className="bg-red-500 text-white px-5 py-2 "
@@ -124,12 +133,14 @@ function AdminfProject() {
           <Form
             layout="vertical"
             onFinish={onFinish}
-            initialValues={selectedItemForEdit || {}}
+            initialValues={{...selectedItemForEdit,
+                 tenurefrom: selectedItemForEdit ? moment(selectedItemForEdit.tenurefrom): null,
+                tenureto: selectedItemForEdit ? moment(selectedItemForEdit.tenureto) : null,}}
           >
             <Form.Item name="title" label="title">
               <input placeholder="title" />
             </Form.Item>
-            <Form.Item name="studentgrp" label="student abstract video link">
+            {/* <Form.Item name="studentgrp" label="student abstract video link">
               <input placeholder="student abstract video link" />
             </Form.Item>
             <Form.Item name="absvideolink" label="abstract video link">
@@ -137,16 +148,22 @@ function AdminfProject() {
             </Form.Item>
             <Form.Item name="photo" label="photo">
               <input placeholder="photo" />
-            </Form.Item>
+            </Form.Item> */}
             <Form.Item name="fundingagencyname" label="funding agency name">
               <input placeholder="funding agency name" />
               </Form.Item>
               <Form.Item name="amtfunded" label="amount funded">
               <input placeholder="amount funded" />
             </Form.Item>
-            <Form.Item name="remark" label="remark">
-              <input placeholder="remark" />
+            <Form.Item name="tenurefrom" label="Date">
+              <DatePicker />
             </Form.Item>
+            <Form.Item name="tenureto" label="Date">
+                <DatePicker />
+            </Form.Item>
+            {/* <Form.Item name="remark" label="remark">
+              <input placeholder="remark" />
+            </Form.Item> */}
 
             <div className="flex justify-end">
               <button
@@ -169,4 +186,4 @@ function AdminfProject() {
   );
 }
 
-export default AdminfProject;
+export default AdminFundedProjects;

@@ -17,7 +17,6 @@ import AdminPastPositions from "./AdminPastPositions";
 import AdminPatents from "./AdminPatents";
 import AdminInterests from "./AdminInterests";
 import AdminRecognitions from "./AdminRecognitions";
-import AdminfProject from "./AdminfProject";
 import AdminAddPositions from "./AdminAddPositions";
 import AdminVisitingPositions from "./AdminVisitingPositions";
 import AdminMentored from "./AdminMentored";
@@ -26,6 +25,7 @@ import AdminFlagship from "./AdminFlagship";
 import AdminFDP from "./AdminFDP";
 import AdminWorkshops from "./AdminWorkshops";
 import AdminReports from "./AdminReports";
+import AdminFundedProjects from "./AdminFundedProjects";
 
 const { TabPane } = Tabs;
 
@@ -107,7 +107,7 @@ function Admin() {
               <AdminRecognitions />
             </TabPane>
             <TabPane tab="Funded Projects" key="19">
-              <AdminfProject />
+              <AdminFundedProjects />
             </TabPane>
             <TabPane tab="Mentored Projects" key="20">
               <AdminMentored />
