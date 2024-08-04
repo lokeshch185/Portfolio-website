@@ -2,8 +2,11 @@
 import { useSelector } from "react-redux";
 import { Space, Table, Tag, Typography } from 'antd';
 import Mentored from "./Mentored";
+import UGProject from "./UGProject";
+import PGProject from "./PGProject";
 import moment from "moment";
 import './Styles.css';
+
 
 
 
@@ -144,6 +147,8 @@ function Fundedprojects() {
 
         </div>
         <Mentored />
+        <UGProject />
+        <PGProject />
         </>
     );
 }
