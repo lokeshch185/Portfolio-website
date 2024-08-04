@@ -3,296 +3,296 @@ const mongoose = require("mongoose");
 const introSchema = new mongoose.Schema({
   welcomeText: {
     type: String,
-    required: true,
+    required: false,
   },
   firstName: {
     type: String,
-    required: true,
+    required: false,
   },
   lastName: {
     type: String,
-    required: true,
+    required: false,
   },
   caption: {
     type: String,
-    required: true,
+    required: false,
   },
   description: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const aboutSchema = new mongoose.Schema({
   lottieURL: {
     type: String,
-    required: true,
+    required: false,
   },
   description1: {
     type: String,
-    required: true,
+    required: false,
   },
   description2: {
     type: String,
-    required: true,
+    required: false,
   },
   skills: {
     type: Array,
-    required: true,
+    required: false,
   },
 });
 
 const experienceSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   period: {
     type: String,
-    required: true,
+    required: false,
   },
   company: {
     type: String,
-    required: true,
+    required: false,
   },
   description: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const projectsSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   description: {
     type: String,
-    required: true,
+    required: false,
   },
   image: {
     type: String,
-    required: true,
+    required: false,
   },
   link: {
     type: String,
-    required: true,
+    required: false,
   },
   technolgies: {
     type: Array,
-    required: true,
+    required: false,
   },
 });
 
 const talksSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   type_of_audience: {
     type: String,
-    required: true,
+    required: false,
   },
   number: {
     type: String,
-    required: true,
+    required: false,
   },
   org_name: {
     type: String,
-    required: true,
+    required: false,
   },
   remark: {
     type: String,
-    required: true,
+    required: false,
   },
   date: {
     type: Date,
-    required: true,
+    required: false,
   },
 });
 
 const journalsSchema = new mongoose.Schema({
   Title: {
     type: String,
-    required: true,
+    required: false,
   },
   Title_of_journal_ppr: {
     type: String,
-    required: true,
+    required: false,
   },
   Author_list: {
     type: String,
-    required: true,
+    required: false,
   },
   ISSN_DOI: {
     type: String,
-    required: true,
+    required: false,
   },
   Remark: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const fprojectsSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   studentgrp: {
     type: String,
-    required: true,
+    required: false,
   },
   absvideolink: {
     type: String,
-    required: true,
+    required: false,
   },
   photo: {
     type: String,
-    required: true,
+    required: false,
   },
   fundingagencyname: {
     type: String,
-    required: true,
+    required: false,
   },
   amtfunded: {
     type: String,
-    required: true,
+    required: false,
   },
   remark: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const coursesSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   description: {
     type: String,
-    required: true,
+    required: false,
   },
   image: {
     type: String,
-    required: true,
+    required: false,
   },
   link: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const contactSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: false,
   },
   gender: {
     type: String,
-    required: true,
+    required: false,
   },
   email: {
     type: String,
-    required: true,
+    required: false,
   },
   mobile: {
     type: String,
-    required: true,
+    required: false,
   },
   age: {
     type: String,
-    required: true,
+    required: false,
   },
   address: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const conferencesSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   conference: {
     type: String,
-    required: true,
+    required: false,
   },
   date: {
     type: Date,
-    required: true,
+    required: false,
   },
   authors: {
     type: String,
-    required: true,
+    required: false,
   },
   venue: {
     type: String,
-    required: true,
+    required: false,
   },
   DOI: {
     type: String,
-    required: true,
+    required: false,
   },
   remark: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const oractivitySchema = new mongoose.Schema({
   date: {
     type: Date,
-    required: true,
+    required: false,
   },
   organisation: {
     type: String,
-    required: true,
+    required: false,
   },
   type: {
     type: String,
-    required: true,
+    required: false,
   },
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   responsibilities: {
     type: String,
-    required: true,
+    required: false,
   },
   remarks: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const ugprojectsSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   group: {
     type: String,
-    required: true,
+    required: false,
   },
   abstract: {
     type: String,
-    required: true,
+    required: false,
   },
   link: {
     type: String,
-    required: true,
+    required: false,
   },
   photo: {
     type: String,
-    required: true,
+    required: false,
   },
   reportlink: {
     type: String,
-    required: true,
+    required: false,
   },
   
 });
@@ -300,15 +300,15 @@ const ugprojectsSchema = new mongoose.Schema({
 const currentPositionSchema = new mongoose.Schema({
   position: {
     type: String,
-    required: true,
+    required: false,
   },
   department: {
     type: String,
-    required: true,
+    required: false,
   },
   // tenure: {
   //   type: Date,
-  //   required: true,
+  //   required: false,
   // },
   
 });
@@ -316,85 +316,85 @@ const currentPositionSchema = new mongoose.Schema({
 const awardsSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   organisation: {
     type: String,
-    required: true,
+    required: false,
   },
   photo: {
     type: String,
-    required: true,
+    required: false,
   },
   remark: {
     type: String,
-    required: true,
+    required: false,
   },
   date: {
     type: Date,
-    required: true,
+    required: false,
   },
 });
 
 const pastpositionSchema = new mongoose.Schema({
   position: {
     type: String,
-    required: true,
+    required: false,
   },
 
   department: {
     type: String,
-    required: true,
+    required: false,
   },
   tenurefrom: {
     type: String,
-    required: true,
+    required: false,
   },
   tenureto: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const interestsSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const recognitionsSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   date: {
     type: Date,
-    required: true,
+    required: false,
   },
 });
 
 const patentsSchema = new mongoose.Schema({
   date: {
     type: Date,
-    required: true,
+    required: false,
   },
 
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   authors: {
     type: String,
-    required: true,
+    required: false,
   },
   organisation: {
     type: String,
-    required: true,
+    required: false,
   },
   remarks: {
     type: String,
-    required: true,
+    required: false,
   },
   
   
@@ -403,12 +403,12 @@ const patentsSchema = new mongoose.Schema({
 const addpositionsSchema = new mongoose.Schema({
   position: {
     type: String,
-    required: true,
+    required: false,
   },
 
   department: {
     type: String,
-    required: true,
+    required: false,
   },
   
 });
@@ -416,59 +416,59 @@ const addpositionsSchema = new mongoose.Schema({
 const visitingpositionsSchema = new mongoose.Schema({
   institute: {
     type: String,
-    required: true,
+    required: false,
   },
 
   course: {
     type: String,
-    required: true,
+    required: false,
   },
 
   tenure:{
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const mentoredSchema = new mongoose.Schema({
   date: {
     type: Date,
-    required: true,
+    required: false,
   },
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   organisation: {
     type: String,
-    required: true,
+    required: false,
   },
   grantreceived: {
     type: String,
-    required: true,
+    required: false,
   },
   remarks: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
 const flagshipsSchema = new mongoose.Schema({
   event: {
     type: String,
-    required: true,
+    required: false,
   },
   year: {
     type: String,
-    required: true,
+    required: false,
   },
   college: {
     type: String,
-    required: true,
+    required: false,
   },
   role: {
     type: String,
-    required: true,
+    required: false,
   },
   
 });
@@ -477,19 +477,19 @@ const eventsSchema = new mongoose.Schema({
   
   event: {
     type: String,
-    required: true,
+    required: false,
   },
   venue: {
     type: String,
-    required: true,
+    required: false,
   },
   date: {
     type: String,
-    required: true,
+    required: false,
   },
   role: {
     type: String,
-    required: true,
+    required: false,
   },
   weblink: {
     type: String,
@@ -501,39 +501,39 @@ const eventsSchema = new mongoose.Schema({
 const fdpSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
 
   description: {
     type: String,
-    required: true,
+    required: false,
   },
   from: {
     type: Date,
-    required: true,
+    required: false,
   },
   to: {
     type: Date,
-    required: true,
+    required: false,
   },
 
 });
 const workshopsSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   description: {
     type: String,
-    required: true,
+    required: false,
   },
   from: {
     type: Date,
-    required: true,
+    required: false,
   },
   to: {
     type: Date,
-    required: true,
+    required: false,
   },
 
   

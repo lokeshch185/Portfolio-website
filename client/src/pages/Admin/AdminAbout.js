@@ -10,8 +10,7 @@ function AdminAbout() {
   const { portfolioData } = useSelector((state) => state.root);
   const onFinish = async (values) => {
     try {
-      const tempSkills = values.skills.split(",");
-      values.skills = tempSkills;
+      
       dispatch(ShowLoading());
       const response = await axios.post("/api/portfolio/update-about", {
         ...values,
