@@ -14,11 +14,12 @@ function Flagship() {
   }
 
     return (
-        <>
-        <div>
-        <h1 className="mt-6 flex justify-center items-center text-4xl text-primary font-bold">Flagship Events</h1>
+        <div className="mt-20">
+         <div id="events" className="px-4 "><Events /></div>
+        <div id="flagship-events" className="px-4 ">
+        <SectionTitle text = "bold" className="fixed" title="Flagship Events" />
 
-            <div className="ml-5 flex w-full items-center sm:flex-col mt-10 text-lg">
+            <div className="ml-5 flex  items-center sm:flex-col mt-10 text-lg">
                 <ul>
                     {flagships.map((flagship, index) => (
                         <li key={index} className ="">
@@ -35,8 +36,9 @@ function Flagship() {
 
 
         </div>
-        <Events />
-        </>
+       
+       
+        </div>
         
     );
 }

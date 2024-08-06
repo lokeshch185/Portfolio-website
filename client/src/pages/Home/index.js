@@ -15,22 +15,38 @@ function Home() {
   const { portfolioData } = useSelector((state) => state.root);
   return (
     <div>
-      {/* <Header /> */}
-
       {portfolioData && (
-        <div className="">
-          <Intro />
-          <About />
-          <CurrentPosition/>          
-          <AddPosition />
-          <PastPosition/>
-          <VisitingPosition />
-          {/* <Experiences/> */}
-          <Experience1 />
-          <Awards/> 
-          <Interest />
-          <Recognitions />
-          {/* <LeftSider /> */}
+        <div className="mt-16">
+          <section id="intro">
+            <Intro />
+          </section>
+          <section id="about">
+            <About />
+          </section>
+          <section id="current-position">
+            <CurrentPosition />
+          </section>
+          <section id="add-position">
+            <AddPosition />
+          </section>
+          <section id="past-position">
+            <PastPosition />
+          </section>
+          <section id="visiting-position">
+            <VisitingPosition />
+          </section>
+          <section id="experience1">
+            <Experience1 />
+          </section>
+          <section id="awards">
+            <Awards />
+          </section>
+          <section id="interest">
+            <Interest />
+          </section>
+          <section id="recognitions">
+            <Recognitions />
+          </section>
         </div>
       )}
     </div>

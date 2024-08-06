@@ -73,8 +73,8 @@ function ORActivities() {
     ];
 
     return (
-        <>
-            <div className="m-8 sm:m-4">
+        <div className="mt-20">
+            <div className="m-8 sm:m-4"id="oractivities">
             <h1 className="select-none flex hover:animate-pulse duration-150 py-4 sm:py-2 sm:mx-4 lg:mx-56 justify-start lg:justify-center items-center rounded-xl bg-gradient-to-r
              from-blue-300 via-blue-100 to-blue-300 shadow-xl shadow-gray-600 text-4xl sm:text-2xl font-semibold whitespace-nowrap">Outreach Activities</h1>
             <Table
@@ -108,12 +108,20 @@ function ORActivities() {
             `}</style>
             
         </div>
-        <Talks/>
+
+        <div id="talks">
+            <Talks/>
+        </div>
+       
         {/* <Flagship />
         <Events /> */}
+        <div id="fdps">
         <FDP />
+        </div>
+        <div id="workshops">
         <Workshops />
-        </>
+        </div>
+        </div>
         
     );
 }

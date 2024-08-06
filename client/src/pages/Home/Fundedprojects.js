@@ -1,4 +1,3 @@
-
 import { useSelector } from "react-redux";
 import { Space, Table, Tag, Typography } from 'antd';
 import Mentored from "./Mentored";
@@ -7,21 +6,12 @@ import PGProject from "./PGProject";
 import moment from "moment";
 import './Styles.css';
 
-
-
-
 const { Title, Text } = Typography;
 
 function Fundedprojects() {
     const { portfolioData } = useSelector((state) => state.root);
-
-    // Safely access awards with optional chaining and provide a default empty array
     const fprojects = portfolioData?.fprojects || [];
 
-    console.log(fprojects);
-    console.log(portfolioData);
-
-    // Define table columns
     const columns = [
         {
             title: 'From',
@@ -31,9 +21,6 @@ function Fundedprojects() {
             align: 'center',
             fixed: 'left',
             render: (text) => moment(text).format('YYYY-MM-DD'),
-            // render: (text) => {moment(from).format("YYYY-MM-DD"), moment(to).format("YYYY-MM-DD")}
-
-            
         },
         {
             title: 'To',
@@ -43,11 +30,7 @@ function Fundedprojects() {
             align: 'center',
             fixed: 'left',
             render: (text) => moment(text).format('YYYY-MM-DD'),
-            // render: (text) => {moment(from).format("YYYY-MM-DD"), moment(to).format("YYYY-MM-DD")}
-
-            
         },
-
         {
             title: 'Title',
             dataIndex: 'title',
@@ -55,59 +38,20 @@ function Fundedprojects() {
             align: 'center',
             fixed: 'left',
             width: 350,
-
         },
-        // {
-        //     title: 'Studentgrp',
-        //     dataIndex: 'studentgrp',
-        //     key: 'studentgrp',
-        //     align: 'center',
-
-        // },
-        // {
-        //     title: 'Abstract video link',
-        //     dataIndex: 'absvideolink',
-        //     key: 'absvideolink',
-        //     align: 'center',
-
-
-        // },
-
         {
             title: 'Funding agency name',
             dataIndex: 'fundingagencyname',
             key: 'fundingagencyname',
             align: 'center',
-            width: 400
-
+            width: 400,
         },
         {
             title: 'Amt Funded (Rs)',
             dataIndex: 'amtfunded',
             key: 'amtfunded',
             align: 'center',
-
         },
-        // {
-        //     title: 'Remark',
-        //     dataIndex: 'remark',
-        //     key: 'remark',
-        //     align: 'center',
-        //     width:550,
-
-        // },
-        // {
-        //     title: 'Photo',
-        //     dataIndex: 'photo',
-        //     key: 'photo',
-        //     align: 'center',
-        //     width: 20,
-        //     render: (text, record) => (
-        //         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded" onClick={() => handleDownloadImage(record.photo)} style={{ width: 50 }}>
-        //             View
-        //         </button>
-        //     ),
-        // },
     ];
 
     const handleDownloadImage = (url) => {
@@ -121,9 +65,8 @@ function Fundedprojects() {
 
     return (
         <>
-        <div className=" m-8 sm:m-4 ">
-            <h1 className=" select-none flex hover:animate-pulse duration-150 py-4 sm:py-2 sm:mx-4 lg:mx-56 justify-start lg:justify-center items-center rounded-xl bg-gradient-to-r
-             from-blue-300 via-blue-100 to-blue-300 shadow-xl shadow-gray-600 text-4xl sm:text-2xl font-semibold whitespace-nowrap">Funded Research Projects</h1>
+        <div className="m-8 sm:m-4 mt-20" id="funded-projects">
+            <h1 className="select-none flex hover:animate-pulse duration-150 py-4 sm:py-2 sm:mx-4 lg:mx-56 justify-start lg:justify-center items-center rounded-xl bg-gradient-to-r from-blue-300 via-blue-100 to-blue-300 shadow-xl shadow-gray-600 text-4xl sm:text-2xl font-semibold whitespace-nowrap">Funded Research Projects</h1>
             <Table
                 dataSource={fprojects}
                 columns={columns}
@@ -132,25 +75,25 @@ function Fundedprojects() {
                 pagination={false}
                 className="animated-table"
                 bordered
-                scroll={{
-                    x: 'max-content', // Enable horizontal scroll
-                    // Enable vertical scroll with a height limit
-                }}
-
+                scroll={{ x: 'max-content' }}
             />
             <style jsx>{`
             .ant-table-thead > tr > th {
-
-                background-color: #0A192F !important; /* Use primary color */
+                background-color: #0A192F !important;
                 color: white !important;
             }
            `}</style>
-
         </div>
-        <Mentored />
-        <UGProject />
-        <PGProject />
+        <div id="mentored">
+            <Mentored />
+        </div>
+        <div id="ug-projects">
+            <UGProject />
+        </div>
+        <div id="pg-projects">
+            <PGProject />
+        </div>
         </>
     );
 }
-export default Fundedprojects; 
+export default Fundedprojects;
