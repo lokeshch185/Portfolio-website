@@ -34,10 +34,11 @@ function Fundedprojects() {
         {
             title: 'Title',
             dataIndex: 'title',
+            className: 'responsive-title-column',
             key: 'title',
             align: 'center',
             fixed: 'left',
-            width: 350,
+            // width: 350,
         },
         {
             title: 'Funding agency name',

@@ -12,3 +12,20 @@
   .animated-table {
     animation: slideUp 0.5s ease-out;
   }
+
+  .responsive-title-column {
+    width: 175px;
+  }
+  
+  /* Larger width for larger screens */
+  @media (min-width: 768px) {
+    .responsive-title-column {
+      width: 250px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .responsive-title-column {
+      width: 350px;
+    }
+  }
