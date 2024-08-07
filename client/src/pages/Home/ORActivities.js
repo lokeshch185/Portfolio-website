@@ -74,7 +74,7 @@ function ORActivities() {
 
     return (
         <div className="mt-20">
-            <div className="m-8 sm:m-4"id="oractivities">
+            <div className="m-8 sm:m-4" id="oractivities">
             <h1 className="select-none flex hover:animate-pulse duration-150 py-4 sm:py-2 sm:mx-4 lg:mx-56 justify-start lg:justify-center items-center rounded-xl bg-gradient-to-r
              from-blue-300 via-blue-100 to-blue-300 shadow-xl shadow-gray-600 text-4xl sm:text-2xl font-semibold whitespace-nowrap">Outreach Activities</h1>
             <Table
@@ -86,6 +86,10 @@ function ORActivities() {
                 pagination={false}
                 className="animated-table"
                 bordered
+                scroll={{
+                    x: 'max-content', // Enable horizontal scroll
+                    // Enable vertical scroll with a height limit
+                }}
 
             />
             <style jsx>{`

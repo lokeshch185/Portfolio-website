@@ -100,7 +100,7 @@ const NavBar = (props) => {
 
                 <SubMenu key="oractivities" title="Outreach Activities" onTitleClick={() => gotoPage("/oractivities")}>
                 <Menu.Item key="oractivities0">
-                    <Link scroll={scrollWithOffset} to="/oractivities#conferences">Outreach Activities</Link>
+                    <Link scroll={scrollWithOffset} to="/oractivities#oractivities">Outreach Activities</Link>
                   </Menu.Item>
                   <Menu.Item key="oractivities1">
                     <Link scroll={scrollWithOffset} to="/oractivities#talks">Talks</Link>

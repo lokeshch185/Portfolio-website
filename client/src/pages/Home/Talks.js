@@ -73,6 +73,8 @@ function Talks() {
         <div className="m-8 sm:m-4">
             <h1 className="select-none flex hover:animate-pulse duration-150 py-4 sm:py-2 sm:mx-4 lg:mx-80 justify-start lg:justify-center items-center rounded-xl bg-gradient-to-r
              from-blue-300 via-blue-100 to-blue-300 shadow-xl shadow-gray-600 text-4xl sm:text-2xl font-semibold whitespace-nowrap">Talks</h1>
+        
+        
         <Table
             dataSource={talks}
             columns={columns}
