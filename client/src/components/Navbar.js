@@ -123,7 +123,10 @@ const NavBar = (props) => {
                   </Menu.Item>
              
                 </SubMenu>
-              </Menu>
+                <Menu.Item key="reports" onClick={() => gotoPage("/reports")}>
+                  Reports
+                </Menu.Item>
+             </Menu>
             </Col>
           </Row>
         </Header>
