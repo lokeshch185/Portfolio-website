@@ -26,12 +26,12 @@ const NavBar = (props) => {
       <Col xl={24} lg={24} md={24} sm={24} xs={24}>
         <Header className="header-fixed">
           <Row>
-            <Col xl={12} lg={12} md={12} sm={20} xs={20}>
+            <Col xl={8} lg={8} md={12} sm={20} xs={20}>
               <Title id="title-button" level={4}>
                 <a onClick={() => gotoPage('/')}>Prof. K.T.V Talele</a>
               </Title>
             </Col>
-            <Col xl={12} lg={12} md={12} sm={4} xs={4}>
+            <Col xl={14} lg={14} md={12} sm={4} xs={4}>
               <Menu
                 theme="dark"
                 mode="horizontal"
